@@ -3,7 +3,7 @@ import React from "react";
 interface SectionHeaderProps {
   titleStart: string;
   titleHighlight: string;
-  description: string;
+  description?: string;
   className?: string;
   reverse?: boolean;
 }

@@ -1,5 +1,4 @@
 import Button from "@/components/buttons/button";
-import Navbar from "@/components/navigation/navBar";
 import Background from "@/components/ui/backGround";
 import Image from "next/image";
 import ImageMarquee from "./(homapage)/heroSection/imageMarquee";
@@ -7,9 +6,7 @@ import ImageSection from "./(homapage)/currentImages/imageSection";
 import ServicesSection from "./(homapage)/serviceSection/serviceSection";
 import MissionVision from "./(homapage)/mission/missionSection";
 import GameSection from "./(homapage)/gameChanger/gameSection";
-import FactoryVisitations from "./(homapage)/factorySection/factory";
 import Testimonials from "./(homapage)/testimonials/testimonialSection";
-import ReadySection from "./(homapage)/readySection/readySection";
 
 export default function HomePage() {
   return (
@@ -72,7 +69,6 @@ export default function HomePage() {
       <GameSection />
       <Testimonials />
       {/* <FactoryVisitations /> */}
-      <ReadySection />
     </main>
   );
 }

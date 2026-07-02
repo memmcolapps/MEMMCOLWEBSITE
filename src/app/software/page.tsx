@@ -115,10 +115,6 @@ export default function SoftwareSolutionsSection() {
           <SoftwareCard key={i} {...solution} />
         ))}
       </div>
-
-      <div className="px-4">
-        <ReadySection />
-      </div>
     </section>
   );
 }

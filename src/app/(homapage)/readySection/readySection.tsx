@@ -1,6 +1,9 @@
 import Button from "@/components/buttons/button";
+import { useRouter } from "next/navigation";
 
 export default function ReadySection() {
+  const router = useRouter();
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 px-6 md:px-10 py-12 md:py-20 items-center">
       <div className="space-y-3 md:space-y-4 text-center md:text-left">
@@ -14,7 +17,7 @@ export default function ReadySection() {
       </div>
 
       <div className="flex justify-center md:justify-center">
-        <Button text={"Connect with us"} />
+        <Button onClick={() => router.push("/contactus")} text={"Connect with us"} />
       </div>
     </div>
   );

@@ -54,7 +54,7 @@ function TestimonialCard({
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="rounded-2xl p-7 flex flex-col justify-between min-h-[280px] border border-primary/40 cursor-pointer transition-all duration-300"
+      className="rounded-2xl p-7 flex flex-col justify-between min-h-70 border border-primary/40 cursor-pointer transition-all duration-300"
       style={{
         background: hovered
           ? "radial-gradient(circle at 30% 20%, #213328, #37925E)"

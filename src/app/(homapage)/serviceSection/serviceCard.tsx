@@ -6,7 +6,7 @@ import { iconMap } from "@/lib/icons";
 interface ServiceCardProps {
   icon: string;        
   title: string;
-  description: string;
+  description: string| React.ReactNode;
 }
 
 export default function ServiceCard({ icon, title, description }: ServiceCardProps) {

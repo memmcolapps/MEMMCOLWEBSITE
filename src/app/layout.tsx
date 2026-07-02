@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Ellipsis from "@/components/ui/ellipses";
-import Navbar from "@/components/navigation/navBar";
 import Footer from "@/components/navigation/footer";
-import ReadySection from "./(homapage)/readySection/readySection";
+import ConditionalNavbar from "@/components/navigation/conditionalNav";
+import ConditionalReadySection from "./(homapage)/readySection/conditionalReadySection";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,11 +31,14 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="relative min-h-screen flex flex-col overflow-x-hidden bg-blue-400">
-        <Navbar />
+      <body className="relative min-h-screen flex flex-col overflow-x-hidden">
+        <ConditionalNavbar />
         <Ellipsis />
         <main className="flex-1">{children}</main>
-          <Footer />
+        <div className="px-4 mt-4">
+          <ConditionalReadySection />
+        </div>
+        <Footer />
       </body>
     </html>
   );

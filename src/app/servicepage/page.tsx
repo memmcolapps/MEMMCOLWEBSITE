@@ -1,7 +1,6 @@
 import SectionHeader from "@/components/headers/sectionHeader";
 import ServicesSection from "../(homapage)/serviceSection/serviceSection";
 import Image from "next/image";
-import ReadySection from "../(homapage)/readySection/readySection";
 
 export default function ServicePage() {
   return (
@@ -26,10 +25,6 @@ export default function ServicePage() {
       </div>
 
       <ServicesSection />
-
-      <div className="px-4">
-        <ReadySection />
-      </div>
     </section>
   );
 }

@@ -5,6 +5,9 @@ import {
   Headphones,
   Briefcase,
   Search,
+  Trophy,
+  Globe,
+  Rocket,
   type LucideIcon,
 } from "lucide-react";
 
@@ -14,5 +17,8 @@ export const iconMap: Record<string, LucideIcon> = {
   Zap,
   Headphones,
   Briefcase,
+  Globe,
+  Rocket,
   Search,
+  Trophy,
 };

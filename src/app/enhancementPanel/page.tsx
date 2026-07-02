@@ -1,7 +1,6 @@
 import SectionHeader from "@/components/headers/sectionHeader";
 import SoftwareCard from "../software/softwareCard";
 import Image from "next/image";
-import ReadySection from "../(homapage)/readySection/readySection";
 
 const solutions = [
   {
@@ -81,9 +80,6 @@ export default function EnhancementSection() {
             />
           </div>
         </div>
-      </div>
-      <div className="px-4">
-        <ReadySection />
       </div>
     </section>
   );

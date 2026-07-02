@@ -6,7 +6,11 @@ import { ChevronDown, ChevronRight, ChevronUp, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Button from "../buttons/button";
 
-const Navbar = () => {
+interface NavbarProps {
+  light?: boolean; 
+}
+
+const Navbar = ({ light = false }: NavbarProps) => {
   const router = useRouter();
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
@@ -29,15 +33,16 @@ const Navbar = () => {
     {
       name: "Media",
       submenu: [
-        { name: "News", route: "/coreProducts/#Data_Management" },
-        { name: "CSR", route: "/coreProducts/#Meter_Management" },
+        { name: "News", route: "/mediapage/mediasection" },
+        { name: "CSR", route: "/mediapage/csr" },
       ],
     },
     { name: "Contact us", route: "/contactus" },
-    { name: "About us", route: "/" },
+    { name: "About us", route: "/aboutus" },
   ];
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setOpenDropdown(null);
     setMobileMenuOpen(false);
   }, [pathname]);
@@ -102,7 +107,11 @@ const Navbar = () => {
                 onClick={() =>
                   setOpenDropdown((prev) => (prev === idx ? null : idx))
                 }
-                className="flex text-sm text-black hover:text-primary items-center gap-1"
+                className={`flex text-sm items-center gap-1 hover:text-primary ${
+                  light
+                    ? "text-white"
+                    : "text-black "
+                }`}
               >
                 {link.name}
                 {openDropdown === idx ? (
@@ -113,7 +122,7 @@ const Navbar = () => {
               </div>
 
               {openDropdown === idx && (
-                <ul className="absolute left-0 w-[200px] bg-white  shadow-lg rounded-lg py-2 z-20">
+                <ul className="absolute left-0 w-[200px] bg-white shadow-lg rounded-lg py-2 z-20">
                   {link.submenu.map((sub, i) => (
                     <li
                       key={i}
@@ -133,7 +142,11 @@ const Navbar = () => {
             <li
               key={idx}
               onClick={() => router.push(link.route)}
-              className="cursor-pointer text-sm text-black p-2 hover:text-primary"
+              className={`cursor-pointer text-sm p-2 hover:text-primary ${
+                light
+                  ? "text-white "
+                  : "text-black "
+              }`}
             >
               {link.name}
             </li>
@@ -153,9 +166,9 @@ const Navbar = () => {
       <div className="sm:hidden flex items-center ">
         <button onClick={() => setMobileMenuOpen((prev) => !prev)}>
           {mobileMenuOpen ? (
-            <X color="black" size={16} />
+            <X color={light ? "white" : "black"} size={16} />
           ) : (
-            <Menu color="black" size={16} />
+            <Menu color={light ? "white" : "black"} size={16} />
           )}
         </button>
       </div>

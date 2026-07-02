@@ -1,6 +1,5 @@
 import SectionHeader from "@/components/headers/sectionHeader";
 import ProductGrid from "./productSection";
-import ReadySection from "../(homapage)/readySection/readySection";
 
 const products = [
   {
@@ -187,10 +186,6 @@ export default function MeteringSolutionSection() {
         className="mb-12"
       />
       <ProductGrid products={products} />
-
-      <div className="px-4">
-        <ReadySection />
-      </div>
     </section>
   );
 }

@@ -21,19 +21,19 @@ const footerColumns: FooterColumn[] = [
   {
     heading: "Company",
     links: [
-      { label: "Meters", href: "/products/#meters", external: true },
-      { label: "Services", href: "/", external: true },
-      { label: "Utility Software", href: "/", external: true },
-      { label: "Enhancement Panel", href: "/", external: true },
-      { label: "About Us", href: "/", external: true },
+      { label: "Meters", href: "/products", external: true },
+      { label: "Services", href: "/servicepage", external: true },
+      { label: "Utility Software", href: "/software", external: true },
+      { label: "Enhancement Panel", href: "/enhancementPanel", external: true },
+      { label: "About Us", href: "/aboutus", external: true },
     ],
   },
   {
     heading: "Media",
     links: [
       { label: "Blog", href: "/", external: true },
-      { label: "News", href: "/", external: true },
-      { label: "CSR", href: "/", external: true },
+      { label: "News", href: "/mediapage/mediasection", external: true },
+      { label: "CSR", href: "/mediapage/csr", external: true },
     ],
   },
   {

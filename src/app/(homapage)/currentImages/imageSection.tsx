@@ -41,7 +41,7 @@ export default function ImageSection() {
         {images.map((src, index) => (
           <div
             key={index}
-            className="relative overflow-hidden rounded-xl aspect-[4/3]"
+            className="relative overflow-hidden rounded-xl aspect-4/3"
           >
             <Image
               src={src}
@@ -66,7 +66,7 @@ export default function ImageSection() {
         {images.map((src, index) => (
           <div
             key={index}
-            className="relative flex-shrink-0 overflow-hidden rounded-xl"
+            className="relative shrink-0 overflow-hidden rounded-xl"
             style={{
               width: "75vw",
               aspectRatio: "4/3",
