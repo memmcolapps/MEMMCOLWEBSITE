@@ -1,5 +1,6 @@
 import SectionHeader from "@/components/headers/sectionHeader";
 import ProductGrid from "./productSection";
+import ReadySection from "../(homapage)/readySection/readySection";
 
 const products = [
   {
@@ -178,7 +179,7 @@ const products = [
 
 export default function MeteringSolutionSection() {
   return (
-    <section className="py-16 bg-[#F5F8F4]">
+    <section className="py-16">
       <SectionHeader
         titleStart="Metering"
         titleHighlight="Solution"
@@ -186,6 +187,10 @@ export default function MeteringSolutionSection() {
         className="mb-12"
       />
       <ProductGrid products={products} />
+
+      <div className="px-4">
+        <ReadySection />
+      </div>
     </section>
   );
 }

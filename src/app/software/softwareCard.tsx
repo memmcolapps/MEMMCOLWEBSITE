@@ -7,9 +7,10 @@ interface SoftwareCardProps {
   imageAlt: string;
   description: string | React.ReactNode;
   tagline?: string;
-  bulletPoints: string[];
+  bulletPoints?: string[];
   reverse?: boolean;
   className?: string;
+  infoOnly?: boolean;
 }
 
 export default function SoftwareCard({
@@ -18,13 +19,14 @@ export default function SoftwareCard({
   imageAlt,
   description,
   tagline,
+  infoOnly,
   bulletPoints,
   reverse = false,
   className = "",
 }: SoftwareCardProps) {
   return (
     <div
-      className={`rounded-2xl border border-gray-200 bg-[#F5F8F4] p-8 md:p-10 ${className}`}
+      className={`rounded-2xl border border-gray-200 p-8 md:p-6 ${className}`}
     >
       <div
         className={`flex flex-col gap-10 items-center ${
@@ -32,7 +34,7 @@ export default function SoftwareCard({
         }`}
       >
         {/* Device image */}
-        <div className="relative w-full max-w-[280px] aspect-square shrink-0 mx-auto md:mx-0">
+        <div className={`relative w-full ${infoOnly ? 'max-w-120' : "max-w-70"} aspect-square shrink-0 mx-auto md:mx-0`}>
           <Image
             src={image}
             alt={imageAlt}
@@ -58,7 +60,7 @@ export default function SoftwareCard({
           )}
 
           <ul className="space-y-2">
-            {bulletPoints.map((point, i) => (
+            {bulletPoints?.map((point, i) => (
               <li
                 key={i}
                 className="flex items-start gap-2 text-sm text-gray-700 leading-relaxed"

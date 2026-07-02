@@ -58,8 +58,8 @@ const Footer = () => {
   return (
     <div className="bg-darkGreen px-4 py-5 font-extralight text-white sm:px-8 md:px-10">
       <div className="flex flex-col gap-20 md:mt-0 md:gap-10">
-        <div className="flex flex-col py-10 items-start justify-between gap-12 md:flex-row md:items-start md:gap-10">
-          <div className="flex flex-col gap-2">
+        <div className="flex flex-col py-10 items-start justify-between gap-12 md:flex-row md:items-start md:gap-30">
+          <div className="flex flex-col gap-2  w-125">
             <div>
               <Image
                 src="/icons/logo.svg"
@@ -71,15 +71,15 @@ const Footer = () => {
                 blurDataURL={"/icons/logo.svg"}
               />
             </div>
-            <div className="text-sm">
+            <div className="text-sm leading-5 ">
               Unified access, Unlimited utility possibilities
             </div>
           </div>
 
-          <div className="grid grid-cols-4 gap-x-6 gap-y-4 sm:gap-x-10 md:gap-x-20 md:pr-10 items-start">
-            {/* Company / Media columns */}
+          <div className="grid grid-cols-2 gap-x-10 gap-y-8 sm:grid-cols-4 md:gap-x-16 md:pr-10">
+            {/* Company & Media */}
             {footerColumns.slice(0, 2).map((col) => (
-              <div key={col.heading} className="flex flex-col gap-4">
+              <div key={col.heading} className="flex flex-col gap-3">
                 <div className="text-xs text-[#66746D] font-normal">
                   {col.heading}
                 </div>
@@ -96,12 +96,12 @@ const Footer = () => {
               </div>
             ))}
 
-            {/* Contact (kept as-is, custom content) */}
-            <div className="flex flex-col gap-4 max-w-40">
+            {/* Contact */}
+            <div className="flex flex-col gap-3">
               <div className="text-xs text-[#66746D] font-normal">Contact</div>
               <Link
                 target="_blank"
-                href={"https://memmcol.com"}
+                href="https://memmcol.com"
                 className="text-sm text-white"
               >
                 gridflex@memmcol.com
@@ -114,16 +114,16 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Policies column (with arrow icon) */}
+            {/* Policies */}
             {footerColumns.slice(2).map((col) => (
-              <div key={col.heading} className="flex flex-col gap-4">
+              <div key={col.heading} className="flex flex-col gap-3">
                 <div className="text-xs text-[#66746D] font-normal">
                   {col.heading}
                 </div>
                 {col.links.map((link) => (
                   <Link
                     key={link.label}
-                    className="flex flex-row gap-1 text-sm text-white"
+                    className="flex items-center gap-1 text-sm text-white"
                     target={link.external ? "_blank" : undefined}
                     href={link.href}
                   >
@@ -138,12 +138,12 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col-reverse  justify-between gap-2 md:flex-row md:items-center md:gap-0">
-          <div className="text-xs">
+        {/* Bottom bar */}
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div className="text-xs text-white/60">
             © 2025, Powered by MEMMCOL. All rights reserved.
           </div>
-          <div></div>
-          <div className="mb-2 flex flex-row gap-4 md:mb-0">
+          <div className="flex flex-row gap-4">
             {socialIcons.map((icon) => (
               <Image
                 key={icon.alt}

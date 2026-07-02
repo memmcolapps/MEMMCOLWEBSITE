@@ -35,7 +35,6 @@ export default function RootLayout({
         <Navbar />
         <Ellipsis />
         <main className="flex-1">{children}</main>
-          <ReadySection />
           <Footer />
       </body>
     </html>

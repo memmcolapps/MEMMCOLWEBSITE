@@ -1,5 +1,6 @@
 import SectionHeader from "@/components/headers/sectionHeader";
 import SoftwareCard from "./softwareCard";
+import ReadySection from "../(homapage)/readySection/readySection";
 
 const solutions = [
   {
@@ -101,7 +102,7 @@ const solutions = [
 
 export default function SoftwareSolutionsSection() {
   return (
-    <section className="py-16 bg-[#F5F8F4]">
+    <section className="py-16">
       <SectionHeader
         titleStart="Software"
         titleHighlight="Solutions"
@@ -113,6 +114,10 @@ export default function SoftwareSolutionsSection() {
         {solutions.map((solution, i) => (
           <SoftwareCard key={i} {...solution} />
         ))}
+      </div>
+
+      <div className="px-4">
+        <ReadySection />
       </div>
     </section>
   );

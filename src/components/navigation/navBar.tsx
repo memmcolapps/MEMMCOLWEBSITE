@@ -5,7 +5,6 @@ import { useRouter, usePathname } from "next/navigation";
 import { ChevronDown, ChevronRight, ChevronUp, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Button from "../buttons/button";
-import { div } from "framer-motion/client";
 
 const Navbar = () => {
   const router = useRouter();
@@ -23,10 +22,10 @@ const Navbar = () => {
       submenu: [
         { name: "Meters", route: "/products" },
         { name: "Software", route: "/software" },
-        { name: "Enhancement Panel", route: "/coreProducts/#Vending_Platform" },
+        { name: "Enhancement Panel", route: "/enhancementPanel" },
       ],
     },
-    { name: "Services", route: "/" },
+    { name: "Services", route: "/servicepage" },
     {
       name: "Media",
       submenu: [
@@ -34,7 +33,7 @@ const Navbar = () => {
         { name: "CSR", route: "/coreProducts/#Meter_Management" },
       ],
     },
-    { name: "Contact us", route: "/" },
+    { name: "Contact us", route: "/contactus" },
     { name: "About us", route: "/" },
   ];
 
