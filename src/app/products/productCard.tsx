@@ -15,6 +15,7 @@ interface ProductFeatureCardProps {
   description: string;
   features: Feature[];
   className?: string;
+  redLine?: boolean;
 }
 
 export default function ProductFeatureCard({
@@ -22,6 +23,7 @@ export default function ProductFeatureCard({
   productAddInfo,
   productImage,
   description,
+  redLine = false,
   features,
   className = "",
 }: ProductFeatureCardProps) {
@@ -43,8 +45,9 @@ export default function ProductFeatureCard({
         {/* Text content */}
         <div className="flex-1">
           <h3 className="text-xl font-semibold text-gray-900 mb-3">
-            {productName} –
-            <span className="text-gray-500 text-sm font-normal">
+            {productName}
+            {redLine && <span>–</span>}
+            <span className="text-red-300 text-sm font-normal">
               {productAddInfo}
             </span>
           </h3>
@@ -64,7 +67,7 @@ export default function ProductFeatureCard({
                   <span className="font-semibold text-gray-900">
                     {feature.title}
                   </span>{" "}
-                  – {feature.description}
+                  –{feature.description}
                 </p>
               </li>
             ))}

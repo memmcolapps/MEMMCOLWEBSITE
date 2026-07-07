@@ -36,6 +36,7 @@ const testimonials = [
 ];
 
 const CARDS_PER_VIEW = 3;
+const MOBILE_INITIAL_COUNT = 2;
 
 function TestimonialCard({
   quote,
@@ -93,6 +94,7 @@ function TestimonialCard({
 
 export default function Testimonials() {
   const [startIndex, setStartIndex] = useState(0);
+  const [showAllMobile, setShowAllMobile] = useState(false);
 
   const maxIndex = Math.max(testimonials.length - CARDS_PER_VIEW, 0);
 
@@ -109,8 +111,12 @@ export default function Testimonials() {
     startIndex + CARDS_PER_VIEW
   );
 
+  const mobileCards = showAllMobile
+    ? testimonials
+    : testimonials.slice(0, MOBILE_INITIAL_COUNT);
+
   return (
-    <section className="bg-white py-16 px-10">
+    <section className="bg-white pt-20 md:pt-32">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-start justify-between mb-10">
           <div>
@@ -120,7 +126,7 @@ export default function Testimonials() {
             <p className="text-gray-500 text-sm">Don&apos;t just take our word for it.</p>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-3">
             <button
               onClick={handlePrev}
               disabled={startIndex === 0}
@@ -140,11 +146,28 @@ export default function Testimonials() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="hidden md:grid md:grid-cols-3 gap-6">
           {visibleCards.map((t, i) => (
             <TestimonialCard key={startIndex + i} {...t} />
           ))}
         </div>
+
+        <div className="md:hidden grid grid-cols-1 gap-6">
+          {mobileCards.map((t, i) => (
+            <TestimonialCard key={i} {...t} />
+          ))}
+        </div>
+
+        {!showAllMobile && testimonials.length > MOBILE_INITIAL_COUNT && (
+          <div className="md:hidden flex justify-center mt-6">
+            <button
+              onClick={() => setShowAllMobile(true)}
+              className="text-sm font-semibold text-white bg-primary p-2 rounded-xl hover:text-green-800 transition"
+            >
+              View more
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

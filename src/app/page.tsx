@@ -7,6 +7,23 @@ import ServicesSection from "./(homapage)/serviceSection/serviceSection";
 import MissionVision from "./(homapage)/mission/missionSection";
 import GameSection from "./(homapage)/gameChanger/gameSection";
 import Testimonials from "./(homapage)/testimonials/testimonialSection";
+import Slideshow from "./(homapage)/factorySection/factory";
+
+const factoryImages = [
+  {
+    src: "/images/factory1.svg",
+    alt: "Team reviewing circuit board in meeting room",
+  },
+  {
+    src: "/images/factory2.svg",
+    alt: "Engineer showing component to executive",
+  },
+  { src: "/images/factory3.svg", alt: "Factory floor team discussion" },
+  {
+    src: "/images/factory4.svg",
+    alt: "Close-up of engineer demonstrating component",
+  },
+];
 
 export default function HomePage() {
   return (
@@ -43,7 +60,7 @@ export default function HomePage() {
 
             <p className="mt-6 md:mt-8 max-w-xl text-base md:text-lg leading-relaxed text-gray-500 px-2">
               Momas is known for its innovation, research and development
-              capabilities. Saving power since 1977.
+              capabilities.
             </p>
 
             <div className="mt-8 md:mt-12 pb-4">
@@ -64,11 +81,17 @@ export default function HomePage() {
         </section>
       </div>
       <ImageSection />
-      <ServicesSection />
+      <div className="px-4 md:px-12 lg:px-20 py-16 md:py-24">
+        <ServicesSection />
+      </div>
       <MissionVision />
-      <GameSection />
-      <Testimonials />
-      {/* <FactoryVisitations /> */}
+
+      <div className="px-4 md:px-12 lg:px-20 py-16 md:py-24">
+        <GameSection />
+        <Testimonials />
+      </div>
+
+      <Slideshow title="Factory Visitations" images={factoryImages} />
     </main>
   );
 }

@@ -10,7 +10,10 @@ interface SoftwareCardProps {
   bulletPoints?: string[];
   reverse?: boolean;
   className?: string;
+  subtitle?: string;
   infoOnly?: boolean;
+  addedInfo?: string;
+  onClick?: () => void;
 }
 
 export default function SoftwareCard({
@@ -19,14 +22,32 @@ export default function SoftwareCard({
   imageAlt,
   description,
   tagline,
+  subtitle,
   infoOnly,
+  addedInfo,
   bulletPoints,
   reverse = false,
   className = "",
+  onClick,
 }: SoftwareCardProps) {
   return (
     <div
-      className={`rounded-2xl border border-gray-200 p-8 md:p-6 ${className}`}
+      onClick={onClick}
+      role={onClick ? "button" : undefined}
+      tabIndex={onClick ? 0 : undefined}
+      onKeyDown={
+        onClick
+          ? (e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                onClick();
+              }
+            }
+          : undefined
+      }
+      className={`rounded-2xl border border-gray-200 p-8 md:p-6 ${
+        onClick ? "cursor-pointer" : ""
+      } ${className}`}
     >
       <div
         className={`flex flex-col gap-10 items-center ${
@@ -34,23 +55,22 @@ export default function SoftwareCard({
         }`}
       >
         {/* Device image */}
-        <div className={`relative w-full ${infoOnly ? 'max-w-120' : "max-w-70"} aspect-square shrink-0 mx-auto md:mx-0`}>
-          <Image
-            src={image}
-            alt={imageAlt}
-            fill
-            className="object-contain"
-          />
+        <div
+          className={`relative w-full ${infoOnly ? "max-w-120" : "max-w-70"} aspect-square shrink-0 mx-auto md:mx-0`}
+        >
+          <Image src={image} alt={imageAlt} fill className="object-contain" />
         </div>
 
         {/* Text content */}
         <div className="flex-1">
-          <h3 className="text-xl font-semibold text-gray-900 mb-3">
-            {title}
-          </h3>
+          <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
+          <h4 className="text-sm font-medium text-gray-900 mb-3">{subtitle}</h4>
 
           <div className="text-sm text-gray-700 leading-relaxed mb-2">
-            {description}
+            {description}{" "}
+              <span className="text-red-300 text-sm font-semibold">
+                {addedInfo}
+              </span>
           </div>
 
           {tagline && (

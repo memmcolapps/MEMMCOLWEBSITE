@@ -3,11 +3,11 @@ import Image from "next/image";
 
 export default function MissionVision() {
   return (
-    <section className="relative bg-white px-2 md:px-0 overflow-hidden">
+    <section className="relative overflow-hidden bg-white">
       {/* Mission Row */}
-      <div className="flex flex-col items-center gap-8 py-20 lg:mt-0 lg:flex-row lg:items-center lg:justify-between">
+      <div className="flex flex-col items-center gap-8 px-2 py-20 md:px-0 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
         {/* Left: Text */}
-        <div className="order-2 max-w-md text-center lg:pl-26 lg:order-1 lg:text-left">
+        <div className="order-2 max-w-md px-2 text-center md:px-0 lg:order-1 lg:max-w-lg lg:px-4 lg:pl-20 lg:text-left xl:pl-24">
           <div className="mx-auto mb-5 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 lg:mx-0">
             <TargetIcon strokeWidth={1} color="#37925E" />
           </div>
@@ -36,7 +36,7 @@ export default function MissionVision() {
         </div>
       </div>
 
-      <div className="hidden md:block relative w-full h-32 -my-2 pointer-events-none">
+      <div className="pointer-events-none relative -my-2 hidden h-32 w-full md:block">
         <Image
           src={"/icons/SectionDivider.svg"}
           alt=""
@@ -58,8 +58,8 @@ export default function MissionVision() {
         </div>
 
         {/* Text */}
-        <div className="max-w-md text-center lg:text-left">
-          <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 lg:mx-0 mx-auto">
+        <div className="max-w-md px-2 text-center md:px-0 lg:max-w-lg lg:px-4 lg:pr-20 lg:text-left xl:pr-24">
+          <div className="mx-auto mb-5 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 lg:mx-0">
             <EarthIcon strokeWidth={1.5} color="#37925E" size={20} />
           </div>
 

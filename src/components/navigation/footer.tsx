@@ -24,6 +24,7 @@ const footerColumns: FooterColumn[] = [
       { label: "Meters", href: "/products", external: true },
       { label: "Services", href: "/servicepage", external: true },
       { label: "Utility Software", href: "/software", external: true },
+      { label: "Documentation", href: "https://meters-api.netlify.app/", external: true },
       { label: "Enhancement Panel", href: "/enhancementPanel", external: true },
       { label: "About Us", href: "/aboutus", external: true },
     ],
@@ -70,9 +71,6 @@ const Footer = () => {
                 placeholder="blur"
                 blurDataURL={"/icons/logo.svg"}
               />
-            </div>
-            <div className="text-sm leading-5 ">
-              Unified access, Unlimited utility possibilities
             </div>
           </div>
 

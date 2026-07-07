@@ -9,10 +9,12 @@ import {
   Globe,
   Rocket,
   type LucideIcon,
+  ArrowRight,
 } from "lucide-react";
 
 export const iconMap: Record<string, LucideIcon> = {
   Settings,
+  ArrowRight,
   Wrench,
   Zap,
   Headphones,

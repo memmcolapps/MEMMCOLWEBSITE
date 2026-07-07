@@ -8,11 +8,11 @@ type TeamMember = {
 
 const team: TeamMember[] = [
   { name: "Engr. Kola Balogun FNSE, MNSE", role: "Executive Chairman, Momas Group", image: "/images/ceo.svg" },
-  { name: "Engr. Kola Balogun FNSE, MNSE", role: "Executive Chairman, Momas Group", image: "/images/ceo.svg" },
-  { name: "Engr. Kola Balogun FNSE, MNSE", role: "Executive Chairman, Momas Group", image: "/images/ceo.svg" },
-  { name: "Engr. Kola Balogun FNSE, MNSE", role: "Executive Chairman, Momas Group", image: "/images/ceo.svg" },
-  { name: "Engr. Kola Balogun FNSE, MNSE", role: "Executive Chairman, Momas Group", image: "/images/ceo.svg" },
-  { name: "Engr. Kola Balogun FNSE, MNSE", role: "Executive Chairman, Momas Group", image: "/images/ceo.svg" },
+  { name: "Engr. Kola Balogun FNSE, MNSE", role: "Executive Chairman, Momas Group", image: "/images/MD.svg" },
+  { name: "Engr. Kola Balogun FNSE, MNSE", role: "Executive Chairman, Momas Group", image: "/images/test.svg" },
+  { name: "Engr. Kola Balogun FNSE, MNSE", role: "Executive Chairman, Momas Group", image: "/images/test.svg" },
+  { name: "Engr. Kola Balogun FNSE, MNSE", role: "Executive Chairman, Momas Group", image: "/images/test.svg" },
+  { name: "Engr. Kola Balogun FNSE, MNSE", role: "Executive Chairman, Momas Group", image: "/images/test.svg" },
 ];
 
 export default function ManagementTeam() {

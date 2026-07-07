@@ -1,9 +1,27 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 import SectionHeader from "@/components/headers/sectionHeader";
 import SoftwareCard from "./softwareCard";
-import ReadySection from "../(homapage)/readySection/readySection";
 
 const solutions = [
   {
+    src: "https://meters-api.netlify.app/",
+    title: "Momas API",
+    image: "/images/momas-api.svg",
+    imageAlt: "Gridflex dashboard on desktop",
+    subtitle: "Connect. Integrate. Scale.",
+    description:
+      "Empower your applications with secure, well-documented APIs designed for seamless integrations, real-time monitoring, and enterprise-grade reliability.",
+    bulletPoints: [
+      "Secure authentication and API key management.",
+      "Interactive documentation and sandbox environment.",
+      "Real-time analytics and request monitoring.",
+      "Flexible subscription plans for every stage of growth.",
+    ],
+  },
+  {
+    src: "https://gridflexhome.netlify.app/",
     title: "Gridflex",
     image: "/icons/gridflex.svg",
     imageAlt: "Gridflex dashboard on desktop",
@@ -17,6 +35,7 @@ const solutions = [
     ],
   },
   {
+    src: "sbc",
     title: "SBC (Smart Breaker Controller)",
     image: "/icons/SBC.svg",
     imageAlt: "SBC mobile app interface",
@@ -28,6 +47,7 @@ const solutions = [
     ],
   },
   {
+    src: "momaspay",
     title: "Momaspay",
     image: "/icons/mompay.svg",
     imageAlt: "Momaspay mobile app interface",
@@ -52,6 +72,7 @@ const solutions = [
     ],
   },
   {
+    src: "ecmi",
     title: "ECMI",
     image: "/icons/ECMI.svg",
     imageAlt: "ECMI",
@@ -77,10 +98,12 @@ const solutions = [
     ],
   },
   {
+    src: "ems",
     title: "EMS",
     image: "/icons/EMS.svg",
     imageAlt: "EMS",
-    description: "EMS – Electricity Management System",
+    description: "EMS – Electricity Management System – ",
+    addedInfo: "Decommissioned",
     bulletPoints: [
       "EMS is designed to address the shortcomings of existing credit billing systems such as AVR and Spectrum.",
       "It is a Windows-based application.",
@@ -88,10 +111,12 @@ const solutions = [
     ],
   },
   {
+    src: "emac",
     title: "EMAC",
     image: "/icons/EMAC.svg",
     imageAlt: "EMAC",
-    description: "EMAC – Electricity Management Application Console",
+    description: "EMAC – Electricity Management Application Console – ",
+    addedInfo: "Decommissioned",
     bulletPoints: [
       "Purpose: Designed to actualize statistical metering, enabling analytical comparison between the energy supplied to a substation and the cumulative energy consumed by all consumers connected to it.",
       "Focus Area: Addresses the Low Voltage side of the substation.",
@@ -101,6 +126,8 @@ const solutions = [
 ];
 
 export default function SoftwareSolutionsSection() {
+  const router = useRouter();
+
   return (
     <section className="py-16">
       <SectionHeader
@@ -111,8 +138,12 @@ export default function SoftwareSolutionsSection() {
       />
 
       <div className="flex flex-col gap-8 max-w-5xl mx-auto px-4">
-        {solutions.map((solution, i) => (
-          <SoftwareCard key={i} {...solution} />
+        {solutions.map(({ src, ...solution }, i) => (
+          <SoftwareCard
+            key={i}
+            {...solution}
+            onClick={() => router.push(`${src}`)}
+          />
         ))}
       </div>
     </section>
