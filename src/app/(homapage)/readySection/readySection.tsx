@@ -10,17 +10,14 @@ export default function ReadySection() {
         <div className="text-xl md:text-2xl font-semibold text-gray-900">
           Ready to power your next project?
         </div>
-        <div className="text-sm text-gray-500 whitespace-nowrap">
+        <div className="text-sm text-gray-500">
           Our team is here to help you design, customize, and deploy the right
           solution.
         </div>
       </div>
 
       <div className="flex justify-center md:justify-center">
-        <Button
-          onClick={() => router.push("/contactus")}
-          text={"Connect with us"}
-        />
+        <Button onClick={() => router.push("/contactus")} text={"Connect with us"} />
       </div>
     </div>
   );
