@@ -32,6 +32,7 @@ export default function GameSection() {
                 alt={""}
                 width={500}
                 height={100}
+                className="h-[300px] rounded-xl w-[500px]"
               />
             </div>
           </div>
@@ -42,6 +43,7 @@ export default function GameSection() {
               alt={""}
               width={500}
               height={100}
+              className="h-[300px] rounded-xl w-[500px]"
             />
           </div>
         </div>
