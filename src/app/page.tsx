@@ -11,16 +11,16 @@ import Slideshow from "./(homapage)/factorySection/factory";
 
 const factoryImages = [
   {
-    src: "/images/factory1.svg",
+    src: "/images/factory1.png",
     alt: "Team reviewing circuit board in meeting room",
   },
   {
-    src: "/images/factory2.svg",
+    src: "/images/factory2.png",
     alt: "Engineer showing component to executive",
   },
-  { src: "/images/factory3.svg", alt: "Factory floor team discussion" },
+  { src: "/images/factory3.png", alt: "Factory floor team discussion" },
   {
-    src: "/images/factory4.svg",
+    src: "/images/factory4.png",
     alt: "Close-up of engineer demonstrating component",
   },
 ];

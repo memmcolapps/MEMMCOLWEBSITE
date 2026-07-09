@@ -28,7 +28,7 @@ export default function GameSection() {
             <div className="">BEFORE</div>
             <div className="">
               <Image
-                src={"/images/before.svg"}
+                src={"/images/before.png"}
                 alt={""}
                 width={500}
                 height={100}
@@ -38,7 +38,7 @@ export default function GameSection() {
           <div className="space-y-4">
             <div>AFTER</div>
             <Image
-              src={"/images/after.svg"}
+              src={"/images/after.png"}
               alt={""}
               width={500}
               height={100}

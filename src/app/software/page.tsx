@@ -8,7 +8,7 @@ const solutions = [
   {
     src: "https://meters-api.netlify.app/",
     title: "Momas API",
-    image: "/images/momas-api.svg",
+    image: "/images/Momas.png",
     imageAlt: "Gridflex dashboard on desktop",
     subtitle: "Connect. Integrate. Scale.",
     description:
@@ -23,7 +23,7 @@ const solutions = [
   {
     src: "https://gridflexhome.netlify.app/",
     title: "Gridflex",
-    image: "/icons/gridflex.svg",
+    image: "/images/Gridflex-1.png",
     imageAlt: "Gridflex dashboard on desktop",
     description:
       "GridFlex simplifies electricity management with real-time data, smart automation, and an intuitive dashboard for total network control.",
@@ -37,7 +37,7 @@ const solutions = [
   {
     src: "sbc",
     title: "SBC (Smart Breaker Controller)",
-    image: "/icons/SBC.svg",
+    image: "/images/image-25.png",
     imageAlt: "SBC mobile app interface",
     description:
       "The Smart Breaker Controller (SBC) is a powerful application designed for utility companies to manage electricity distribution with ease and efficiency. It enables administrators to remotely switch breakers on or off at any time, providing real-time communication and control over power delivery across different areas. By replacing manual operations with a seamless digital system, SBC helps improve response times, enhance reliability, and optimize energy distribution.",
@@ -49,7 +49,7 @@ const solutions = [
   {
     src: "momaspay",
     title: "Momaspay",
-    image: "/icons/mompay.svg",
+    image: "/images/mompay.png",
     imageAlt: "Momaspay mobile app interface",
     description: (
       <>
@@ -74,7 +74,7 @@ const solutions = [
   {
     src: "ecmi",
     title: "ECMI",
-    image: "/icons/ECMI.svg",
+    image: "/images/ECMI.png",
     imageAlt: "ECMI",
     description: (
       <>
@@ -100,7 +100,7 @@ const solutions = [
   {
     src: "ems",
     title: "EMS",
-    image: "/icons/EMS.svg",
+    image: "/images/EMS.png",
     imageAlt: "EMS",
     description: "EMS – Electricity Management System – ",
     addedInfo: "Decommissioned",
@@ -113,7 +113,7 @@ const solutions = [
   {
     src: "emac",
     title: "EMAC",
-    image: "/icons/EMAC.svg",
+    image: "/images/EMAC.png",
     imageAlt: "EMAC",
     description: "EMAC – Electricity Management Application Console – ",
     addedInfo: "Decommissioned",

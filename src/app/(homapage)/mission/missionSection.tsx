@@ -27,7 +27,7 @@ export default function MissionVision() {
         {/* Right: Image */}
         <div className="order-1 h-70 w-full max-w-115 shrink-0 overflow-hidden rounded-2xl lg:order-2">
           <Image
-            src="/images/mission.svg"
+            src="/images/mission.png"
             alt="Team joining hands"
             width={558}
             height={399}
@@ -49,7 +49,7 @@ export default function MissionVision() {
         {/* Image */}
         <div className="h-70 w-full max-w-115 shrink-0 overflow-hidden rounded-2xl">
           <Image
-            src="/images/vision.svg"
+            src="/images/vision.png"
             alt="Vision"
             width={558}
             height={399}

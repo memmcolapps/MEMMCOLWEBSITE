@@ -16,7 +16,7 @@ export default function ServicePage() {
       <div className="px-4">
         <div className="relative h-125">
           <Image
-            src="/images/servicepage.svg"
+            src="/images/servicepage.png"
             alt="Network distribution"
             fill
             className="object-cover"
@@ -24,7 +24,9 @@ export default function ServicePage() {
         </div>
       </div>
 
-      <ServicesSection />
+      <div className="py-10">
+        <ServicesSection />
+      </div>
     </section>
   );
 }

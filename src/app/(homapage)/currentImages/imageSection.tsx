@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 const images = [
-  "/images/operation1.svg",
-  "/images/operation2.svg",
-  "/images/operation3.svg",
-  "/images/operation4.svg",
+  "/images/operation1.png",
+  "/images/operation2.png",
+  "/images/operation3.png",
+  "/images/operation4.png",
 ];
 
 export default function ImageSection() {

@@ -7,12 +7,36 @@ type TeamMember = {
 };
 
 const team: TeamMember[] = [
-  { name: "Engr. Kola Balogun FNSE, MNSE", role: "Executive Chairman, Momas Group", image: "/images/ceo.svg" },
-  { name: "Engr. Kola Balogun FNSE, MNSE", role: "Executive Chairman, Momas Group", image: "/images/MD.svg" },
-  { name: "Engr. Kola Balogun FNSE, MNSE", role: "Executive Chairman, Momas Group", image: "/images/test.svg" },
-  { name: "Engr. Kola Balogun FNSE, MNSE", role: "Executive Chairman, Momas Group", image: "/images/test.svg" },
-  { name: "Engr. Kola Balogun FNSE, MNSE", role: "Executive Chairman, Momas Group", image: "/images/test.svg" },
-  { name: "Engr. Kola Balogun FNSE, MNSE", role: "Executive Chairman, Momas Group", image: "/images/test.svg" },
+  {
+    name: "Engr. Kola Balogun FNSE, MNSE",
+    role: "Executive Chairman, Momas Group",
+    image: "/images/ceo.png",
+  },
+  {
+    name: "Hammed Abiodun S.",
+    role: "Managing Director, Momas Group",
+    image: "/images/MD.png",
+  },
+  {
+    name: "Olugbenga Ayo-Omodara",
+    role: "Chief Commercial Officer, Momas Group",
+    image: "/images/Person.png",
+  },
+  {
+    name: "Engr. Kola Balogun FNSE, MNSE",
+    role: "Executive Chairman, Momas Group",
+    image: "/images/test.svg",
+  },
+  {
+    name: "Engr. Kola Balogun FNSE, MNSE",
+    role: "Executive Chairman, Momas Group",
+    image: "/images/test.svg",
+  },
+  {
+    name: "Engr. Kola Balogun FNSE, MNSE",
+    role: "Executive Chairman, Momas Group",
+    image: "/images/test.svg",
+  },
 ];
 
 export default function ManagementTeam() {

@@ -10,7 +10,7 @@ export default function AboutHero() {
     <>
       <section className="relative w-full h-125 md:h-110 overflow-hidden">
         <Image
-          src="/images/aboutus.svg"
+          src="/images/aboutus.png"
           alt="MEMMCOL team"
           fill
           priority

@@ -5,14 +5,14 @@ import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
 
 const images = [
-  "/images/1.svg",
-  "/images/2.svg",
-  "/images/3.svg",
-  "/images/4.svg",
-  "/images/5.svg",
-  "/images/6.svg",
-  "/images/7.svg",
-  "/images/8.svg",
+  "/images/1.png",
+  "/images/2.png",
+  "/images/3.png",
+  "/images/4.png",
+  "/images/5.png",
+  "/images/6.png",
+  "/images/7.png",
+  "/images/8.png",
 ];
 
 export default function ImageMarquee() {

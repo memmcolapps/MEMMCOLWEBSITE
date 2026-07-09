@@ -6,14 +6,14 @@ const solutions = [
   {
     title: "The Game Changer",
     imageAlt: "Game Chnager",
-    image: "/images/transformer.svg",
+    image: "/images/transformer.png",
     description:
       "This concept was born out of the state of dilapidation of the existing fuse-driven substations across the country.Momas Substation Power Enhancement Panel is designed to meet the standardization, miniaturization and outdoor requirements of small-capacity low-voltage distribution equipments. It integrates distribution metering, protection, GPRS remotely and controls switches on/off, capacitor reactive compensation, complete and full functions (short circuit, overload, phase loss, overvoltage, undervoltage, residual current, over-current, neutral line disconnection of power supply, lightning protection) are integrated in SPEP, to provide a real safeguard for electricity use.",
     infoOnly: true,
   },
   {
     title: "The Value Of The Enhancement To The Community Versus Consumer",
-    image: "/images/after.svg",
+    image: "/images/after.png",
     imageAlt: "Enhancement",
     infoOnly: true,
     reverse: true,
@@ -73,7 +73,7 @@ export default function EnhancementSection() {
           </h3>
           <div className="relative w-full h-64">
             <Image
-              src="/images/transform.svg"
+              src="/images/transform.png"
               alt="Network distribution"
               fill
               className="object-contain"
