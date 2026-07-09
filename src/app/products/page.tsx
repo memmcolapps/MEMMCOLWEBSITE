@@ -4,7 +4,7 @@ import ProductGrid from "./productSection";
 const products = [
   {
     productName: "The MMX310NG",
-    productImage: "/icons/310.svg",
+    productImage: "/images/310.png",
     description:
       "A new-generation three-phase smart prepaid electricity meter designed for dual tariff applications. It supports energy monitoring from two different sources—grid and off-grid—and is fully compliant with STS standards. Prepayment and metering functions are managed via token codes, which can be entered through a UIU keypad or remotely via communication modules. The meter is equipped with a measuring unit, display, real-time clock, data storage, local and remote communication interfaces, a load control relay, and other essential functionalities.",
     features: [
@@ -38,7 +38,7 @@ const products = [
 
   {
     productName: "MMX-110-NG < GPRS>",
-    productImage: "/icons/112.svg",
+    productImage: "/images/112.png",
     description:
       "A new-generation single-phase din-rail smart prepaid electricity meter designed for dual tariff applications. It supports energy monitoring from two different sources—grid and off-grid—and is fully compliant with STS standards. Prepayment and metering functions are managed via token codes, which can be entered through a UIU keypad or remotely via communication modules. The meter is equipped with a measuring unit, display, real-time clock, data storage, local and remote communication interfaces, a load control relay, and other essential functionalities.",
     features: [
@@ -72,7 +72,7 @@ const products = [
 
   {
     productName: " MMX110NG-G<GPRS>PLC",
-    productImage: "/icons/110.svg",
+    productImage: "/images/110.png",
     description:
       "The MMX110-NG-GPLC is an advanced single-phase smart meter, designed to revolutionize energy  management with STS compliance and DLMS support. Built for seamless communication, it integrates  PLC/RF UIU technology and features a plug-and-play 4G GPRS communication module, ensuring reliable,  real-time data transmission.",
     features: [
@@ -107,7 +107,7 @@ const products = [
 
   {
     productName: "MMX310-NG-G<GPRS>PLC",
-    productImage: "/icons/310_2.svg",
+    productImage: "/images/310_2.png",
     description:
       "The MMX310-NG-G<GPRS>PLC is an advanced three-phase smart meter, designed to revolutionize energy  management with STS compliance and DLMS support. Built for seamless communication, it integrates  PLC/RF UIU technology and features a plug-and-play 4G GPRS communication module, ensuring reliable,  real-time data transmission.",
     features: [
@@ -143,7 +143,7 @@ const products = [
   {
     productName: "MMX110-NG-G<GPRS>PLC",
     productAddInfo: " Out of production",
-    productImage: "/icons/110_2.svg",
+    productImage: "/images/110_2.png",
     redLine: true,
     description:
       "The MMX110-NG-G<GPRS>PLC is an advanced single-phase smart meter, designed to revolutionize energy  management with STS compliance and DLMS support. Built for seamless communication, it integrates  PLC/RF UIU technology and features a plug-and-play 4G GPRS communication module, ensuring reliable,  real-time data transmission.",
