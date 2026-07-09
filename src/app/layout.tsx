@@ -35,9 +35,7 @@ export default function RootLayout({
         <ConditionalNavbar />
         <Ellipsis />
         <main className="flex-1">{children}</main>
-        <div className="px-4 md:px-12 lg:px-20">
           <ConditionalReadySection />
-        </div>
         <Footer />
       </body>
     </html>
