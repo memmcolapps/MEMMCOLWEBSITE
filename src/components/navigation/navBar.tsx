@@ -102,7 +102,7 @@ const Navbar = ({ light = false }: NavbarProps) => {
       <ul className="hidden sm:flex gap-6 items-center">
         {navLinks.map((link, idx) =>
           link.submenu ? (
-            <li key={idx} className="relative p-2">
+            <li key={idx} className="relative p-2 cursor-pointer">
               <div
                 onClick={() =>
                   setOpenDropdown((prev) => (prev === idx ? null : idx))
