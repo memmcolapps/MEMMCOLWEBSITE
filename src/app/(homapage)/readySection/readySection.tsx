@@ -10,7 +10,7 @@ export default function ReadySection() {
         <div className="text-xl md:text-2xl font-semibold text-gray-900">
           Ready to power your next project?
         </div>
-        <div className="text-sm text-gray-500">
+        <div className="text-sm text-gray-500 md:whitespace-nowrap">
           Our team is here to help you design, customize, and deploy the right
           solution.
         </div>

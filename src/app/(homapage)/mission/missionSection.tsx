@@ -5,7 +5,7 @@ export default function MissionVision() {
   return (
     <section className="relative overflow-hidden bg-white">
       {/* Mission Row */}
-      <div className="flex flex-col items-center gap-8 px-2 py-20 md:px-0 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
+      <div className="flex flex-col items-center gap-8 px-2 py-10 md:px-0 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
         {/* Left: Text */}
         <div className="order-2 max-w-md px-2 text-center md:px-0 lg:order-1 lg:max-w-lg lg:px-4 lg:pl-20 lg:text-left xl:pl-24">
           <div className="mx-auto mb-5 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 lg:mx-0">

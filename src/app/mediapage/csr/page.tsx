@@ -4,7 +4,7 @@ import SectionHeader from "@/components/headers/sectionHeader";
 
 const solutions = [
   {
-    title: "Giving back to the Society.",
+    title: "Giving back to the Society",
     imageAlt: "Giving back",
     image: "/images/giving.png",
     description:
@@ -34,11 +34,11 @@ export default function CSRPage() {
     <div className=" pt-16">
       <SectionHeader
         titleStart="Giving back "
-        titleHighlight="to the Society."
+        titleHighlight="to the Society"
         className="mb-12"
       />
 
-      <div className="mx-auto max-w-5xl px-6 pb-16">
+      <div className="mx-auto max-w-5xl px-6 pb-10">
         {solutions.map((solution, i) => (
           <SoftwareCard key={i} {...solution} />
         ))}

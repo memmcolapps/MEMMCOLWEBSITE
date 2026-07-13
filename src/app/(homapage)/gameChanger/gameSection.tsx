@@ -10,7 +10,7 @@ export default function GameSection() {
   return (
     <div className="px-2 md:px-0">
       <div className="flex flex-col justify-center items-center">
-        <div className="pt-32 pb-16 text-center space-y-2">
+        <div className="py-16 text-center space-y-2">
           <div className="text-primary font-semibold text-2xl">
             The Game Changer
           </div>

@@ -14,6 +14,7 @@ interface SoftwareCardProps {
   infoOnly?: boolean;
   addedInfo?: string;
   onClick?: () => void;
+  linkTo?: boolean;
 }
 
 export default function SoftwareCard({
@@ -27,12 +28,13 @@ export default function SoftwareCard({
   addedInfo,
   bulletPoints,
   reverse = false,
+  linkTo = true,
   className = "",
   onClick,
 }: SoftwareCardProps) {
   return (
     <div
-      onClick={onClick}
+      onClick={linkTo ? onClick : undefined}
       role={onClick ? "button" : undefined}
       tabIndex={onClick ? 0 : undefined}
       onKeyDown={

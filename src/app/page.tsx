@@ -13,15 +13,26 @@ const factoryImages = [
   {
     src: "/images/factory1.png",
     alt: "Team reviewing circuit board in meeting room",
+    description:
+      "Khalil Halilu, EVC/CEO of NASENI, examines a smart metering component during a technical demonstration led by MEMMCOL Chairman, Engr. Kola Balogun, highlighting the company's commitment to innovation and local manufacturing.",
   },
   {
     src: "/images/factory2.png",
     alt: "Engineer showing component to executive",
+    description:
+      "MEMMCOL officials conduct a technical demonstration of locally manufactured metering components during a facility visit, showcasing the company's engineering capabilities, quality assurance processes, and commitment to advancing Nigeria's smart metering industry.",
   },
-  { src: "/images/factory3.png", alt: "Factory floor team discussion" },
+  {
+    src: "/images/factory3.png",
+    alt: "Factory floor team discussion",
+    description:
+      "Khalil Halilu, EVC/CEO of NASENI, examines a smart metering component during a technical demonstration led by MEMMCOL Chairman, Engr. Kola Balogun, highlighting the company's commitment to innovation and local manufacturing.",
+  },
   {
     src: "/images/factory4.png",
     alt: "Close-up of engineer demonstrating component",
+    description:
+      "A MEMMCOL team member presents locally manufactured metering components during a facility visit, demonstrating the precision, craftsmanship, and innovation behind the company's smart metering solutions.",
   },
 ];
 

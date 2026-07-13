@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import SectionHeader from "@/components/headers/sectionHeader";
 import SoftwareCard from "./softwareCard";
+import { getStoreLink } from "../../../utils/getStoreLink";
 
 const solutions = [
   {
@@ -36,6 +37,7 @@ const solutions = [
   },
   {
     src: "sbc",
+    linkTo: false,
     title: "SBC (Smart Breaker Controller)",
     image: "/images/image-25.png",
     imageAlt: "SBC mobile app interface",
@@ -47,9 +49,11 @@ const solutions = [
     ],
   },
   {
-    src: "momaspay",
     title: "Momaspay",
     image: "/images/mompay.png",
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=com.memmcol.momaspay&hl=en",
+    appStoreUrl: "https://apps.apple.com/us/app/momaspay-plus/id6743942353",
     imageAlt: "Momaspay mobile app interface",
     description: (
       <>
@@ -71,62 +75,79 @@ const solutions = [
       "Clients receive net payments directly into their designated bank accounts.",
     ],
   },
-  {
-    src: "ecmi",
-    title: "ECMI",
-    image: "/images/ECMI.png",
-    imageAlt: "ECMI",
-    description: (
-      <>
-        <span className="text-semibold"> ECMI – </span>Electricity Control
-        Management Interface ECMI is an all-in-one enterprise application for
-        utilities to manage prepayment and smart meters. It features:,
-        <div className="pt-4 space-y-4">
-          <div>MDM (Meter Data Management System)</div>
-          <div>STS-Compliant Prepaid Tokens Vending System</div>
-          <div>AMR Communication Platform</div>
-          <div>Payment Management System</div>
-          <div>Reporting System</div>
-          <div className="font-semibold">Additional Features:</div>
-        </div>
-      </>
-    ),
-    bulletPoints: [
-      "ECMI includes a CSP (Customer Sale Point) client interface for vending.",
-      "It supports multi-user access within an n-tier architecture.",
-      "Runs on a SQL Server Database for reliability and scalability.",
-    ],
-  },
-  {
-    src: "ems",
-    title: "EMS",
-    image: "/images/EMS.png",
-    imageAlt: "EMS",
-    description: "EMS – Electricity Management System – ",
-    addedInfo: "Decommissioned",
-    bulletPoints: [
-      "EMS is designed to address the shortcomings of existing credit billing systems such as AVR and Spectrum.",
-      "It is a Windows-based application.",
-      "Uses SQL Server as the database back-end.",
-    ],
-  },
-  {
-    src: "emac",
-    title: "EMAC",
-    image: "/images/EMAC.png",
-    imageAlt: "EMAC",
-    description: "EMAC – Electricity Management Application Console – ",
-    addedInfo: "Decommissioned",
-    bulletPoints: [
-      "Purpose: Designed to actualize statistical metering, enabling analytical comparison between the energy supplied to a substation and the cumulative energy consumed by all consumers connected to it.",
-      "Focus Area: Addresses the Low Voltage side of the substation.",
-      "Implementation: Achieved with the aid of GPRS MD meters, regardless of the type of energy meters installed for individual consumers (electronic, electromechanical, or prepaid).",
-    ],
-  },
+  // {
+  //   src: "ecmi",
+  //   title: "ECMI",
+  //   image: "/images/ECMI.png",
+  //   imageAlt: "ECMI",
+  //   description: (
+  //     <>
+  //       <span className="text-semibold"> ECMI – </span>Electricity Control
+  //       Management Interface ECMI is an all-in-one enterprise application for
+  //       utilities to manage prepayment and smart meters. It features:,
+  //       <div className="pt-4 space-y-4">
+  //         <div>MDM (Meter Data Management System)</div>
+  //         <div>STS-Compliant Prepaid Tokens Vending System</div>
+  //         <div>AMR Communication Platform</div>
+  //         <div>Payment Management System</div>
+  //         <div>Reporting System</div>
+  //         <div className="font-semibold">Additional Features:</div>
+  //       </div>
+  //     </>
+  //   ),
+  //   bulletPoints: [
+  //     "ECMI includes a CSP (Customer Sale Point) client interface for vending.",
+  //     "It supports multi-user access within an n-tier architecture.",
+  //     "Runs on a SQL Server Database for reliability and scalability.",
+  //   ],
+  // },
+  // {
+  //   src: "ems",
+  //   title: "EMS",
+  //   image: "/images/EMS.png",
+  //   imageAlt: "EMS",
+  //   description: "EMS – Electricity Management System – ",
+  //   addedInfo: "Decommissioned",
+  //   bulletPoints: [
+  //     "EMS is designed to address the shortcomings of existing credit billing systems such as AVR and Spectrum.",
+  //     "It is a Windows-based application.",
+  //     "Uses SQL Server as the database back-end.",
+  //   ],
+  // },
+  // {
+  //   src: "emac",
+  //   title: "EMAC",
+  //   image: "/images/EMAC.png",
+  //   imageAlt: "EMAC",
+  //   description: "EMAC – Electricity Management Application Console – ",
+  //   addedInfo: "Decommissioned",
+  //   bulletPoints: [
+  //     "Purpose: Designed to actualize statistical metering, enabling analytical comparison between the energy supplied to a substation and the cumulative energy consumed by all consumers connected to it.",
+  //     "Focus Area: Addresses the Low Voltage side of the substation.",
+  //     "Implementation: Achieved with the aid of GPRS MD meters, regardless of the type of energy meters installed for individual consumers (electronic, electromechanical, or prepaid).",
+  //   ],
+  // },
 ];
 
 export default function SoftwareSolutionsSection() {
   const router = useRouter();
+
+  const handleClick = (item: (typeof solutions)[number]) => {
+    if ("playStoreUrl" in item) {
+      const url = getStoreLink(item.playStoreUrl!, item.appStoreUrl!);
+      window.open(url, "_blank", "noopener,noreferrer");
+      return;
+    }
+
+    const src = (item as { src?: string }).src;
+    if (!src) return;
+
+    if (src.startsWith("http")) {
+      window.open(src, "_blank", "noopener,noreferrer");
+    } else {
+      router.push(`/${src}`);
+    }
+  };
 
   return (
     <section className="py-16">
@@ -138,13 +159,17 @@ export default function SoftwareSolutionsSection() {
       />
 
       <div className="flex flex-col gap-8 max-w-5xl mx-auto px-4">
-        {solutions.map(({ src, ...solution }, i) => (
-          <SoftwareCard
-            key={i}
-            {...solution}
-            onClick={() => router.push(`${src}`)}
-          />
-        ))}
+        {solutions.map((solution, i) => {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const { src, playStoreUrl, appStoreUrl, ...rest } = solution as any;
+          return (
+            <SoftwareCard
+              key={i}
+              {...rest}
+              onClick={() => handleClick(solution)}
+            />
+          );
+        })}
       </div>
     </section>
   );

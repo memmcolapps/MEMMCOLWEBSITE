@@ -63,10 +63,10 @@ const Footer = () => {
           <div className="flex flex-col gap-2  w-125">
             <div>
               <Image
-                src="/icons/logo.svg"
+                src="/icons/footerlogo.svg"
                 alt="Logo"
-                width={60}
-                height={60}
+                width={200}
+                height={200}
                 priority
                 placeholder="blur"
                 blurDataURL={"/icons/logo.svg"}

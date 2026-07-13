@@ -142,9 +142,9 @@ const products = [
 
   {
     productName: "MMX110-NG-G<GPRS>PLC",
-    productAddInfo: " Out of production",
+    // productAddInfo: " Out of production",
     productImage: "/images/110_2.png",
-    redLine: true,
+    // redLine: true,
     description:
       "The MMX110-NG-G<GPRS>PLC is an advanced single-phase smart meter, designed to revolutionize energy  management with STS compliance and DLMS support. Built for seamless communication, it integrates  PLC/RF UIU technology and features a plug-and-play 4G GPRS communication module, ensuring reliable,  real-time data transmission.",
     features: [
