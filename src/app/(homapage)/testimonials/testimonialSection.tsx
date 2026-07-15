@@ -22,15 +22,8 @@ const testimonials = [
   {
     quote:
     "Momas is one of the foremost indigenous meter manufacturing companies in this country. They have shown capacity and efficiency in that field. They are the topmost now in the country and I’m so happy that an indigenous manufacturing company can comfortably compete with international standard.",
-    name: "Khalil Halilu",
-    title: "EVC & CEO NASENI",
-    avatar: "/images/avatar.svg",
-  },
-  {
-    quote:
-      "They stand out as a truly local manufacturer, with homegrown innovations led by Engr. Balogun and a hands-on, technical leadership team creating impactful solutions. They stand out as a truly local manufacturer, with homegrown innovations led by Engr.",
-    name: "No problem Halilu",
-    title: "EVC & CEO NASENI",
+    name: "Mr Chinyeaka Ohaa",
+    title: "Perm. Sec. Fed. Min. of Power, Abuja",
     avatar: "/images/avatar.svg",
   },
 ];

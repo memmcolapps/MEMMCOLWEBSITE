@@ -82,7 +82,7 @@ const Navbar = ({ light = false }: NavbarProps) => {
   return (
     <nav
       ref={navbarRef}
-      className="px-4 md:px-14 py-8 flex flex-row justify-between items-center relative"
+      className="px-4 md:px-14 py-8 flex flex-row bg-white md:bg-transparent justify-between items-center relative"
     >
       <div
         className="font-bold text-lg cursor-pointer w-24 sm:w-20 md:w-36"

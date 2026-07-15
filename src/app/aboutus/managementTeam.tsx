@@ -22,21 +22,6 @@ const team: TeamMember[] = [
     role: "Chief Commercial Officer, Momas Group",
     image: "/images/Person.png",
   },
-  {
-    name: "Engr. Kola Balogun FNSE, MNSE",
-    role: "Executive Chairman, Momas Group",
-    image: "/images/test.svg",
-  },
-  {
-    name: "Engr. Kola Balogun FNSE, MNSE",
-    role: "Executive Chairman, Momas Group",
-    image: "/images/test.svg",
-  },
-  {
-    name: "Engr. Kola Balogun FNSE, MNSE",
-    role: "Executive Chairman, Momas Group",
-    image: "/images/test.svg",
-  },
 ];
 
 export default function ManagementTeam() {

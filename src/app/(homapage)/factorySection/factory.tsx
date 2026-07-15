@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useId, useEffect } from "react";
-import { motion, useAnimationControls } from "framer-motion";
+import { useId, useState } from "react";
 
 export type MarqueeImage = {
   src: string;
@@ -20,26 +19,17 @@ interface ImageMarqueeProps {
 export default function Slideshow({
   title,
   images,
-  duration = 25,
+  duration = 6,
   className = "",
 }: ImageMarqueeProps) {
   const rawId = useId().replace(/[:]/g, "");
   const clipId = `clip-${rawId}`;
+  const animationName = `marquee-${rawId}`;
 
-  const controls = useAnimationControls();
+  const [isPaused, setIsPaused] = useState(false);
 
   const track = [...images, ...images];
-
-  useEffect(() => {
-    controls.start({
-      x: ["0%", "-50%"],
-      transition: {
-        duration,
-        ease: "linear",
-        repeat: Infinity,
-      },
-    });
-  }, [controls, duration]);
+ const totalDuration = duration * images.length;
 
   return (
     <section className={`py-16 ${className}`}>
@@ -55,24 +45,32 @@ export default function Slideshow({
         </defs>
       </svg>
 
+     <style jsx>{`
+        @keyframes ${animationName} {
+          from {
+            transform: translateX(0%);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
+
       <div
         className="relative h-[240px] w-full overflow-hidden md:h-[320px]"
         style={{ clipPath: `url(#${clipId})` }}
-        onMouseEnter={() => controls.stop()}
-        onMouseLeave={() =>
-          controls.start({
-            x: ["0%", "-50%"],
-            transition: {
-              duration,
-              ease: "linear",
-              repeat: Infinity,
-            },
-          })
-        }
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
       >
-        <motion.div
-          animate={controls}
+        <div
           className="flex h-full w-max gap-2"
+          style={{
+            animationName,
+            animationDuration: `${totalDuration}s`,
+            animationTimingFunction: "linear",
+            animationIterationCount: "infinite",
+            animationPlayState: isPaused ? "paused" : "running",
+          }}
         >
           {track.map((img, i) => (
             <div
@@ -94,7 +92,7 @@ export default function Slideshow({
               </div>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

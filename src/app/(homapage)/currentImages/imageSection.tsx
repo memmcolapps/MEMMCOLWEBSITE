@@ -5,6 +5,11 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 const images = [
+  "/images/pic1.jpeg",
+  "/images/pic5.jpeg",
+  "/images/pic2.jpeg",
+  "/images/pic3.jpeg",
+  "/images/pic4.jpeg",
   "/images/operation1.png",
   "/images/operation2.png",
   "/images/operation3.png",

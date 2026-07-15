@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import ReadySection from "./readySection";
 
-const HIDE_READY_SECTION_ON = ["/contactus"];
+const HIDE_READY_SECTION_ON = ["/contactus", "/refundPolicy", "/privacyPolicy", "/termsOfUse", "/limitation-of-liability"];
 
 export default function ConditionalReadySection() {
   const pathname = usePathname();

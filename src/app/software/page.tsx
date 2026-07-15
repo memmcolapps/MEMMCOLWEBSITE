@@ -9,7 +9,7 @@ const solutions = [
   {
     src: "https://meters-api.netlify.app/",
     title: "Momas API",
-    image: "/images/Momas.png",
+    image: "/images/momas-api.png",
     imageAlt: "Gridflex dashboard on desktop",
     subtitle: "Connect. Integrate. Scale.",
     description:

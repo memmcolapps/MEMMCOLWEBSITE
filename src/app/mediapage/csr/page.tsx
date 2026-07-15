@@ -14,18 +14,35 @@ const solutions = [
 ];
 
 const gallery = [
+    {
+    src: "/images/csr1.jpeg",
+    alt: "Gallery",
+    description:
+    "MEMMCOL commemorates the donation of a four-classroom school building at Orimerunmu Primary School, reaffirming its long-standing commitment to expanding access to quality education and supporting sustainable community development.",
+  },
   {
     src: "/images/giving.png",
     alt: "Gallery",
+    description:
+      "MEMMCOL supports pupils of Orimerunmu Primary School through an educational outreach initiative, reinforcing its commitment to learning, community development, and investing in the next generation.",
   },
   {
     src: "/images/crowd.png",
     alt: "Gallery",
+    description:
+      "MEMMCOL representatives join pupils of Orimerunmu Primary School during an educational outreach initiative, distributing learning materials and inspiring young minds through the company's commitment to education, community development, and social impact.",
   },
-  { src: "/images/machine.png", alt: "Gallery" },
+  {
+    src: "/images/machine.png",
+    alt: "Gallery",
+    description:
+      "MEMMCOL promotes health and safety at Orimerunmu Primary School through the installation of a hygiene stand, encouraging proper handwashing and reinforcing healthy practices for pupils and staff.",
+  },
   {
     src: "/images/building.png",
     alt: "Gallery",
+    description:
+      "MEMMCOL reinforces its commitment to community development through the construction of a new school building, providing pupils with a safe, modern, and conducive environment for learning and growth.",
   },
 ];
 

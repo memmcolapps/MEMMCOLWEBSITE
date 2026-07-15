@@ -49,18 +49,6 @@ const mediaItems: MediaItem[] = [
     youtubeId: "U4y83raynsg",
     duration: "7:42",
   },
-  {
-    title:
-      "Bridging Metering Gap: Momas, NEDC Equip 150 Youths To Address Deficit",
-    youtubeId: "REPLACE_ME_8",
-    duration: "7:05",
-  },
-  {
-    title:
-      "Bridging Metering Gap: Momas, NEDC Equip 150 Youths To Address Deficit",
-    youtubeId: "REPLACE_ME_9",
-    duration: "7:05",
-  },
 ];
 
 function youtubeThumb(id: string) {

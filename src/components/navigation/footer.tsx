@@ -24,7 +24,11 @@ const footerColumns: FooterColumn[] = [
       { label: "Meters", href: "/products", external: true },
       { label: "Services", href: "/servicepage", external: true },
       { label: "Utility Software", href: "/software", external: true },
-      { label: "Documentation", href: "https://meters-api.netlify.app/", external: true },
+      {
+        label: "Documentation",
+        href: "https://meters-api.netlify.app/",
+        external: true,
+      },
       { label: "Enhancement Panel", href: "/enhancementPanel", external: true },
       { label: "About Us", href: "/aboutus", external: true },
     ],
@@ -41,7 +45,7 @@ const footerColumns: FooterColumn[] = [
     heading: "Policies",
     withArrow: true,
     links: [
-      { label: "Refund Policy", href: "/privacyPolicy", external: true },
+      { label: "Refund Policy", href: "/refundPolicy", external: true },
       { label: "Privacy Policy", href: "/privacyPolicy", external: true },
       { label: "Terms of Use", href: "/termsOfUse", external: true },
     ],
@@ -49,10 +53,26 @@ const footerColumns: FooterColumn[] = [
 ];
 
 const socialIcons = [
-  { src: "/icons/ealX.svg", alt: "X" },
-  { src: "/icons/whatsapp.svg", alt: "Whatsapp" },
-  { src: "/icons/instagram.svg", alt: "Instagram" },
-  { src: "/icons/linkedin.svg", alt: "LinkedIn" },
+  {
+    src: "/icons/ealX.svg",
+    alt: "X",
+    href: "https://x.com/Momasmeters",
+  },
+  {
+    src: "/icons/whatsapp.svg",
+    alt: "Whatsapp",
+    href: "https://wa.me/2349076661264",
+  },
+  {
+    src: "/icons/instagram.svg",
+    alt: "Instagram",
+    href: "https://www.instagram.com/Momasmeters",
+  },
+  {
+    src: "/icons/linkedin.svg",
+    alt: "Facebook",
+    href: "https://www.facebook.com/Momasmeters",
+  },
 ];
 
 const Footer = () => {
@@ -99,13 +119,13 @@ const Footer = () => {
               <div className="text-xs text-[#66746D] font-normal">Contact</div>
               <Link
                 target="_blank"
-                href="https://memmcol.com"
+                href="mailto:info@memmcol.com"
                 className="text-sm text-white"
               >
-                gridflex@memmcol.com
+                info@memmcol.com
               </Link>
-              <Link href="tel:+2348123456789" className="text-sm text-white">
-                +234 812 345 6789
+              <Link href="tel:+23409076661264" className="text-sm text-white">
+                +234 907 666 1264
               </Link>
               <div className="text-sm text-white">
                 KM 40 Lagos/Ibadan Exp way, Orimerunmu, Ogun State
@@ -139,19 +159,25 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="text-xs text-white/60">
-            © 2025, Powered by MEMMCOL. All rights reserved.
+            © 2026, Powered by MEMMCOL. All rights reserved.
           </div>
           <div className="flex flex-row gap-4">
             {socialIcons.map((icon) => (
-              <Image
+              <Link
                 key={icon.alt}
-                src={icon.src}
-                alt={icon.alt}
-                width={20}
-                height={20}
-                placeholder="blur"
-                blurDataURL={icon.src}
-              />
+                href={icon.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src={icon.src}
+                  alt={icon.alt}
+                  width={20}
+                  height={20}
+                  placeholder="blur"
+                  blurDataURL={icon.src}
+                />
+              </Link>
             ))}
           </div>
         </div>
