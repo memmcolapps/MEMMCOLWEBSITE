@@ -80,7 +80,7 @@ const Footer = () => {
     <div className="bg-darkGreen px-4 py-5 font-extralight text-white sm:px-8 md:px-10">
       <div className="flex flex-col gap-20 md:mt-0 md:gap-10">
         <div className="flex flex-col py-10 items-start justify-between gap-12 md:flex-row md:items-start md:gap-30">
-          <div className="flex flex-col gap-2  w-125">
+          <div className="flex flex-col gap-2 w-full md:w-125">
             <div>
               <Image
                 src="/icons/footerlogo.svg"
