@@ -27,6 +27,7 @@ export default function Slideshow({
   const animationName = `marquee-${rawId}`;
 
   const [isPaused, setIsPaused] = useState(false);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null); // NEW
 
   const track = [...images, ...images];
  const totalDuration = duration * images.length;
@@ -76,6 +77,18 @@ export default function Slideshow({
             <div
               key={i}
               className="group/item relative h-full w-[300px] shrink-0 overflow-hidden md:w-[420px]"
+              onTouchStart={() => {
+                setIsPaused(true);
+                setActiveIndex(i);
+              }}
+              onTouchEnd={() => {
+                setIsPaused(false);
+                setActiveIndex(null);
+              }}
+              onTouchCancel={() => {
+                setIsPaused(false);
+                setActiveIndex(null);
+              }}
             >
               <Image
                 src={img.src}
@@ -85,8 +98,18 @@ export default function Slideshow({
                 className="object-cover"
               />
 
-              <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/0 p-5 text-center opacity-0 backdrop-blur-[2px] transition-all duration-300 ease-out group-hover/item:bg-gray-700/45 group-hover/item:opacity-100">
-                <p className="translate-y-2 text-sm font-semibold text-white transition-transform duration-300 ease-out group-hover/item:translate-y-0 md:text-base">
+              <div
+                className={`pointer-events-none absolute inset-0 flex items-center justify-center p-5 text-center backdrop-blur-[2px] transition-all duration-300 ease-out group-hover/item:bg-gray-700/45 group-hover/item:opacity-100 ${
+                  activeIndex === i
+                    ? "bg-gray-700/45 opacity-100"
+                    : "bg-black/0 opacity-0"
+                }`}
+              >
+                <p
+                  className={`text-sm font-semibold text-white transition-transform duration-300 ease-out group-hover/item:translate-y-0 md:text-base ${
+                    activeIndex === i ? "translate-y-0" : "translate-y-2"
+                  }`}
+                >
                   {img.description}
                 </p>
               </div>
