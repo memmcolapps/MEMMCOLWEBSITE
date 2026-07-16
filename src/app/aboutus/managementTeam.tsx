@@ -18,6 +18,19 @@ const team: TeamMember[] = [
     image: "/images/MD.png",
   },
   {
+    name: "Engr. Mudashiru Okeola",
+    role: "Chief R&D Manager",
+    image: "/images/EngMuda.png",
+  },
+];
+
+const teams: TeamMember[] = [
+  {
+    name: "Engr. Paul Akinde",
+    role: "Head Of R&D (Hardware)",
+    image: "/images/rndHardware.png",
+  },
+  {
     name: "Olugbenga Ayo-Omodara",
     role: "Chief Commercial Officer, Momas Group",
     image: "/images/Person.png",
@@ -41,6 +54,28 @@ export default function ManagementTeam() {
             className={`bg-gray-50 p-6 rounded-lg overflow-hidden ${
               i % 3 === 1 ? "md:mt-4" : ""
             }`}
+          >
+            <div className="relative w-full aspect-[4/3]">
+              <Image
+                src={member.image}
+                alt={member.name}
+                fill
+                className="object-contain"
+              />
+            </div>
+            <div className="p-2 text-center">
+              <p className="text-green-700 font-medium">{member.name}</p>
+              <p className="text-gray-600 text-sm mt-1">{member.role}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex flex-wrap justify-center gap-4 mt-8">
+        {teams.map((member, i) => (
+          <div
+            key={i}
+            className="bg-gray-50 p-6 rounded-lg overflow-hidden w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1.334rem)]"
           >
             <div className="relative w-full aspect-[4/3]">
               <Image

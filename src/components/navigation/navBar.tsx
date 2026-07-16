@@ -94,7 +94,7 @@ const Navbar = ({ light = false }: NavbarProps) => {
           width={40}
           height={40}
           priority
-          style={{ width: "600%", height: "auto" }}
+          className="w-full h-auto"  
         />
       </div>
 

@@ -17,14 +17,14 @@ const testimonials = [
     "The key thing for them is that they are a local manufacturer, when I say that, it means that a lot of their technology, innovations is mostly, I know the chairman, Engr Balogun, I know he is not only a business man but he is also technically very engaged and so are some of the other directors and even the management so my view is that as a company, they look inwards a lot.",
     name: "ENGR Adeoye Fadeyibi",
     title: "MD Eko Disco",
-    avatar: "/images/ekoDisco.png",
+    avatar: "/images/Engade.svg",
   },
   {
     quote:
     "Momas is one of the foremost indigenous meter manufacturing companies in this country. They have shown capacity and efficiency in that field. They are the topmost now in the country and I’m so happy that an indigenous manufacturing company can comfortably compete with international standard.",
     name: "Mr Chinyeaka Ohaa",
     title: "Perm. Sec. Fed. Min. of Power, Abuja",
-    avatar: "/images/avatar.svg",
+    avatar: "/images/ohaa.svg",
   },
 ];
 

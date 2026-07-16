@@ -49,45 +49,45 @@ const factoryImages = [
       "MEMMCOL welcomed representatives from Fidelity Bank for a courtesy visit, fostering meaningful discussions on collaboration, innovation, and opportunities to strengthen partnerships in Nigeria's energy and smart metering sect",
   },
   {
-    src: "/images/factory7.jpeg",
-    alt: "French Navy for a tour",
+    src: "/images/factory7.jpg",
+    alt: "Hosted representatives of the Zamfara State",
     description:
-      "MEMMCOL welcomed members of the French Navy for a tour of its manufacturing facility, showcasing the company's production processes, engineering capabilities, and commitment to delivering high-quality smart metering solutions.",
+      "Hosted representatives of the Zamfara State Social Security Trust Fund (ZSSTF) for a demonstration of MEMMCOL's smart metering and digital utility management solutions, showcasing technologies that support efficient, transparent, and data-driven service delivery.",
   },
 
   {
     src: "/images/factory8.jpeg",
-    alt: "French Navy receive a guided demonstration",
+    alt: "Hosted Spectech Synergy Limited for a facility tour and product showcase",
     description:
-      "Members of the French Navy receive a guided demonstration of MEMMCOL's specialized vehicle manufacturing capabilities, showcasing the company's expertise in engineering, quality production, and support for mission-ready mobility solutions.",
+      "Hosted Spectech Synergy Limited for a facility tour and product showcase, highlighting MEMMCOL's smart metering technologies, manufacturing capabilities, and commitment to local innovation.",
   },
 
   {
     src: "/images/factory9.jpeg",
-    alt: "representatives of the Lagos State Security Trust Fund (LSSTF)",
+    alt: "Hosted Spectech Synergy Limited",
     description:
-      "MEMMCOL welcomed representatives of the Lagos State Security Trust Fund (LSSTF) for a tour of its protective equipment production facility, showcasing locally manufactured ballistic vests and helmets designed to enhance the safety of security personnel.",
+    "Hosted Spectech Synergy Limited in the Software Department for a live demonstration of MEMMCOL's smart metering software solutions, showcasing the digital platforms that power meter management, monitoring, and utility operations.",
   },
 
   {
     src: "/images/factory10.jpeg",
-    alt: "agos State Security Trust Fund (LSSTF) for a live drone demonstration",
+    alt: "Hosted members of the Nigerian Society of Engineers (NSE)",
     description:
-      "MEMMCOL hosted representatives of the Lagos State Security Trust Fund (LSSTF) for a live drone demonstration, showcasing advanced unmanned aerial technology designed to enhance surveillance, situational awareness, and public safety operations.",
+    "Hosted members of the Nigerian Society of Engineers (NSE) for a technical tour and demonstration of MEMMCOL's smart metering technologies, highlighting local manufacturing excellence and engineering innovation.",
   },
 
   {
     src: "/images/factory11.jpeg",
-    alt: "company's locally developed unmanned aerial systems and innovative defence technologies",
+    alt: "Hosted Rear Admiral A.A. Mustapha in the Software Department",
     description:
-      "The company's locally developed unmanned aerial systems and innovative defence technologies, underscoring MEMMCOL's commitment to strengthening Nigeria's indigenous defence capabilities",
+    "Hosted Rear Admiral A.A. Mustapha in the Software Department for a live demonstration of MEMMCOL's smart metering software, showcasing advanced monitoring, remote meter management, and digital utility solutions.",
   },
 
   {
     src: "/images/factory12.jpeg",
-    alt: "Major General Shafaru and his delegation were taken through the production process of MEMMCOL's ballistic helmets",
+    alt: "A hands-on demonstration of MEMMCOL's hardware innovations",
     description:
-      "Major General Shafaru and his delegation were taken through the production process of MEMMCOL's ballistic helmets, highlighting the company's expertise in developing high-performance protective equipment for security and defence applications.",
+    "A hands-on demonstration of MEMMCOL's hardware innovations, showcasing PCB design, electronic components, and smart meter hardware architecture, with discussions on engineering capabilities and local technology development.",
   },
 
   {
@@ -103,55 +103,54 @@ const factoryImages = [
     description:
       "MEMMCOL welcomed representatives from the Federal Ministry of Solid Minerals Development for a strategic engagement, fostering discussions on collaboration, innovation, and opportunities to strengthen Nigeria's industrial and manufacturing ecosystem.",
   },
+
   {
     src: "/images/factory15.jpeg",
-    alt: "Officials from the Ministry of Trade & Investment visited MEMMCOL",
+    alt: "Major General Shaffaru received a live demonstration of the Central Intelligence Tracker",
     description:
-      "Officials from the Ministry of Trade & Investment visited MEMMCOL to explore the company's growing capabilities in advanced manufacturing and indigenous technology development. The visit featured demonstrations of locally developed security and mobility solutions, including robotic systems designed for defense and public safety applications.",
+    "Major General Shaffaru received a live demonstration of the Central Intelligence Tracker, showcasing its real-time monitoring, mapping, and incident management capabilities for enhanced situational awareness and rapid decision-making.",
   },
 
   {
     src: "/images/factory16.jpeg",
-    alt: "visit by representatives of the Nigeria Union of Journalists (NUJ)",
+    alt: "Major General Shaffaru visited the Hardware Department",
     description:
-      "The visit by representatives of the Nigeria Union of Journalists (NUJ) provided an opportunity to showcase MOMAS/EPAIL commitment to innovation, indigenous manufacturing, and technological advancement in Nigeria. During the tour, the delegation explored the company's production facilities and experienced some of its locally developed mobility and defence solutions firsthand.",
+    "Major General Shaffaru visited the Hardware Department, where he was shown MEMMCOL's smart meter hardware components, PCB assemblies, and embedded electronics. The session highlighted the design, functionality, and innovation behind the company's metering hardware solutions.",
   },
 
-  {
-    src: "/images/factory17.jpeg",
-    alt: "EPAIL hosted representatives of the Nigeria Union of Journalists (NUJ)",
-    description:
-      "As part of its commitment to promoting transparency and showcasing indigenous innovation, EPAIL hosted representatives of the Nigeria Union of Journalists (NUJ) for an immersive tour of its manufacturing and technology facilities. The visit provided firsthand insight into the company's production processes, research capabilities, and locally engineered solutions.",
-  },
+  // {
+  //   src: "/images/factory17.jpeg",
+  //   alt: "EPAIL hosted representatives of the Nigeria Union of Journalists (NUJ)",
+  //   description:
+  //     "As part of its commitment to promoting transparency and showcasing indigenous innovation, EPAIL hosted representatives of the Nigeria Union of Journalists (NUJ) for an immersive tour of its manufacturing and technology facilities. The visit provided firsthand insight into the company's production processes, research capabilities, and locally engineered solutions.",
+  // },
 
-
-  {
-    src: "/images/factory18.jpeg",
-    alt: "During the ZSSTF factory visit",
-    description:
-    "During the ZSSTF factory visit, the delegation toured MOMAS/EPAIL protective equipment production facility, where they examined locally manufactured ballistic helmets, strike face plates, and body armour components. The session highlighted the company's quality standards, manufacturing capabilities, and commitment to producing world-class protective solutions for security and defence applications.",
-  },
-
+  // {
+  //   src: "/images/factory18.jpeg",
+  //   alt: "During the ZSSTF factory visit",
+  //   description:
+  //   "During the ZSSTF factory visit, the delegation toured MOMAS/EPAIL protective equipment production facility, where they examined locally manufactured ballistic helmets, strike face plates, and body armour components. The session highlighted the company's quality standards, manufacturing capabilities, and commitment to producing world-class protective solutions for security and defence applications.",
+  // },
 
   {
     src: "/images/factory19.jpeg",
     alt: "The ZSSTF delegation concluded its visit with a group photograph",
     description:
-    "The ZSSTF delegation concluded its visit with a group photograph, commemorating a successful tour of MOMAS/EPAIL manufacturing facilities. The visit reinforced the shared commitment to strengthening local defence manufacturing, fostering strategic partnerships, and advancing indigenous security solutions in Nigeria.",
+      "The ZSSTF delegation concluded its visit with a group photograph, commemorating a successful tour of MOMAS/EPAIL manufacturing facilities. The visit reinforced the shared commitment to strengthening local defence manufacturing, fostering strategic partnerships, and advancing indigenous security solutions in Nigeria.",
   },
 
   {
     src: "/images/factory20.jpeg",
     alt: "the Zenith Bank factory visit",
     description:
-    "During the Zenith Bank factory visit, the delegation toured MOMAS/EPAIL electronics production facility, where they were introduced to the company's locally developed electronic systems and manufacturing processes. The session showcased the design and assembly of key electronic components, highlighting MOMAS/EPAIL innovation, technical expertise, and commitment to advancing indigenous technology solutions in Nigeria.",
+      "During the Zenith Bank factory visit, the delegation toured MOMAS/EPAIL electronics production facility, where they were introduced to the company's locally developed electronic systems and manufacturing processes. The session showcased the design and assembly of key electronic components, highlighting MOMAS/EPAIL innovation, technical expertise, and commitment to advancing indigenous technology solutions in Nigeria.",
   },
 
   {
     src: "/images/factory21.jpeg",
     alt: "During the Women President factory visit",
     description:
-    "During the Women President factory visit, the delegation toured MOMAS/EPAIL electronics production facility, gaining insight into the company's PCB manufacturing processes and indigenous technology capabilities.",
+      "During the Women President factory visit, the delegation toured MOMAS/EPAIL electronics production facility, gaining insight into the company's PCB manufacturing processes and indigenous technology capabilities.",
   },
 ];
 

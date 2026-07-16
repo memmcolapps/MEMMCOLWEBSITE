@@ -69,7 +69,7 @@ const socialIcons = [
     href: "https://www.instagram.com/Momasmeters",
   },
   {
-    src: "/icons/linkedin.svg",
+    src: "/icons/facebook.svg",
     alt: "Facebook",
     href: "https://www.facebook.com/Momasmeters",
   },
