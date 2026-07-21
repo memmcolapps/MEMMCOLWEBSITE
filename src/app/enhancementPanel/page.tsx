@@ -96,7 +96,7 @@ export default function EnhancementSection() {
         </div>
 
         {/* Future Projection */}
-        <div className="bg-white p-4 md:px-8 md:py-26">
+        <div className="rounded-md border border-gray-200 bg-white p-4 md:px-8 md:py-10">
           <h3 className="text-2xl font-semibold text-center text-gray-900 mb-6">
             Future Projection
           </h3>
