@@ -30,7 +30,7 @@ export default function Slideshow({
   const [activeIndex, setActiveIndex] = useState<number | null>(null); // NEW
 
   const track = [...images, ...images];
- const totalDuration = duration * images.length;
+  const totalDuration = duration * images.length;
 
   return (
     <section className={`py-16 ${className}`}>
@@ -46,7 +46,7 @@ export default function Slideshow({
         </defs>
       </svg>
 
-     <style jsx>{`
+      <style jsx>{`
         @keyframes ${animationName} {
           from {
             transform: translateX(0%);
@@ -77,6 +77,12 @@ export default function Slideshow({
             <div
               key={i}
               className="group/item relative h-full w-[300px] shrink-0 overflow-hidden md:w-[420px]"
+              style={{
+                WebkitTouchCallout: "none",
+                WebkitUserSelect: "none",
+                userSelect: "none",
+                touchAction: "pan-y",
+              }}
               onTouchStart={() => {
                 setIsPaused(true);
                 setActiveIndex(i);
@@ -89,6 +95,7 @@ export default function Slideshow({
                 setIsPaused(false);
                 setActiveIndex(null);
               }}
+              onContextMenu={(e) => e.preventDefault()}
             >
               <Image
                 src={img.src}
@@ -96,6 +103,7 @@ export default function Slideshow({
                 fill
                 sizes="420px"
                 className="object-cover"
+                draggable={false}
               />
 
               <div
