@@ -71,6 +71,71 @@
   will-change: transform;
 }
 
+@keyframes spark-flicker {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.55;
+  }
+  16% {
+    opacity: 0.12;
+  }
+  24% {
+    opacity: 0.4;
+  }
+  38% {
+    opacity: 0;
+  }
+}
+
+@keyframes energy-flow {
+  to {
+    stroke-dashoffset: -440;
+  }
+}
+
+.spark-flicker {
+  opacity: 0;
+  animation: spark-flicker 5s ease-in-out infinite;
+}
+
+.energy-flow {
+  animation: energy-flow 14s linear infinite;
+}
+
+@keyframes arc-pulse {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -2140;
+  }
+}
+
+.arc-pulse {
+  animation: arc-pulse 14s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spark-flicker,
+  .energy-flow,
+  .arc-pulse {
+    animation: none;
+  }
+  .spark-flicker {
+    opacity: 0.25;
+  }
+  .arc-pulse {
+    opacity: 0;
+  }
+}
+
+html {
+  overflow-x: clip;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
