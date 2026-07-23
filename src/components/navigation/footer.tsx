@@ -83,7 +83,7 @@ const Footer = () => {
           <div className="flex flex-col gap-2 w-full md:w-125">
             <div>
               <Image
-                src="/icons/footerlogo.svg"
+                src="/icons/footer.svg"
                 alt="Logo"
                 width={200}
                 height={200}

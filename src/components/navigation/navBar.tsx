@@ -15,6 +15,7 @@ const Navbar = ({ light = false }: NavbarProps) => {
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const navbarRef = useRef<HTMLElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
@@ -27,7 +28,7 @@ const Navbar = ({ light = false }: NavbarProps) => {
         { name: "Meters", route: "/products" },
         { name: "Software", route: "/software" },
         { name: "Enhancement Panel", route: "/enhancementPanel" },
-      ],
+      ]
     },
     { name: "Services", route: "/servicepage" },
     {
@@ -41,11 +42,34 @@ const Navbar = ({ light = false }: NavbarProps) => {
     { name: "About us", route: "/aboutus" },
   ];
 
+  const isRouteActive = (route: string) => {
+    if (route === "/") return pathname === "/";
+    return pathname === route || pathname.startsWith(route + "/");
+  };
+
+  const isSubmenuActive = (submenu: { route: string }[]) =>
+    submenu.some((sub) => isRouteActive(sub.route));
+
+  const useLight = light && !scrolled;
+
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setOpenDropdown(null);
     setMobileMenuOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+
+    handleScroll(); 
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -82,19 +106,21 @@ const Navbar = ({ light = false }: NavbarProps) => {
   return (
     <nav
       ref={navbarRef}
-      className="px-4 md:px-14 py-8 flex flex-row bg-white md:bg-transparent justify-between items-center relative"
+      className={`sticky top-0 z-50 px-4 md:px-14 py-8 flex flex-row justify-between items-center relative transition-colors duration-300 ${
+        scrolled ? "bg-white shadow-sm" : "bg-white md:bg-transparent"
+      }`}
     >
       <div
-        className="font-bold text-lg cursor-pointer w-24 sm:w-20 md:w-36"
+        className="font-bold text-lg cursor-pointer w-30 sm:w-20 md:w-36"
         onClick={() => router.push("/")}
       >
         <Image
-          src="/icons/logo.svg"
+          src="/icons/nav.svg"
           alt="Logo"
           width={40}
           height={40}
           priority
-          className="w-full h-auto"  
+          className="w-full h-auto"
         />
       </div>
 
@@ -108,9 +134,11 @@ const Navbar = ({ light = false }: NavbarProps) => {
                   setOpenDropdown((prev) => (prev === idx ? null : idx))
                 }
                 className={`flex text-sm items-center gap-1 hover:text-primary ${
-                  light
-                    ? "text-white"
-                    : "text-black "
+                  isSubmenuActive(link.submenu)
+                    ? "text-primary font-medium"
+                    : useLight
+                      ? "text-white"
+                      : "text-black"
                 }`}
               >
                 {link.name}
@@ -127,7 +155,11 @@ const Navbar = ({ light = false }: NavbarProps) => {
                     <li
                       key={i}
                       onClick={() => router.push(sub.route)}
-                      className="px-4 py-2 text-gray-900 hover:text-gray-500 cursor-pointer text-sm block w-full"
+                      className={`px-4 py-2 hover:text-gray-500 cursor-pointer text-sm block w-full ${
+                        isRouteActive(sub.route)
+                          ? "text-primary font-medium"
+                          : "text-gray-900"
+                      }`}
                     >
                       {sub.name}
                       {i !== link.submenu.length - 1 && (
@@ -143,9 +175,11 @@ const Navbar = ({ light = false }: NavbarProps) => {
               key={idx}
               onClick={() => router.push(link.route)}
               className={`cursor-pointer text-sm p-2 hover:text-primary ${
-                light
-                  ? "text-white "
-                  : "text-black "
+                isRouteActive(link.route)
+                  ? "text-primary font-medium"
+                  : useLight
+                    ? "text-white"
+                    : "text-black"
               }`}
             >
               {link.name}
@@ -166,9 +200,9 @@ const Navbar = ({ light = false }: NavbarProps) => {
       <div className="sm:hidden flex items-center ">
         <button onClick={() => setMobileMenuOpen((prev) => !prev)}>
           {mobileMenuOpen ? (
-            <X color={light ? "white" : "black"} size={16} />
+            <X color={useLight ? "white" : "black"} size={16} />
           ) : (
-            <Menu color={light ? "white" : "black"} size={16} />
+            <Menu color={useLight ? "white" : "black"} size={16} />
           )}
         </button>
       </div>
@@ -187,7 +221,11 @@ const Navbar = ({ light = false }: NavbarProps) => {
                     onClick={() =>
                       setOpenDropdown((prev) => (prev === idx ? null : idx))
                     }
-                    className="flex justify-between items-center cursor-pointer px-2 py-2"
+                    className={`flex justify-between items-center cursor-pointer px-2 py-2 ${
+                      isSubmenuActive(link.submenu)
+                        ? "text-primary font-medium"
+                        : ""
+                    }`}
                   >
                     {link.name}
                     {openDropdown === idx ? (
@@ -203,7 +241,11 @@ const Navbar = ({ light = false }: NavbarProps) => {
                         <li
                           key={i}
                           onClick={() => router.push(sub.route)}
-                          className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                          className={`px-4 py-2 hover:bg-gray-100 cursor-pointer ${
+                            isRouteActive(sub.route)
+                              ? "text-primary font-medium"
+                              : ""
+                          }`}
                         >
                           {sub.name}
                         </li>
@@ -215,7 +257,11 @@ const Navbar = ({ light = false }: NavbarProps) => {
                 <div key={idx}>
                   <li
                     onClick={() => router.push(link.route)}
-                    className="px-2 py-2 cursor-pointer hover:bg-gray-100 rounded-md"
+                    className={`px-2 py-2 cursor-pointer hover:bg-gray-100 rounded-md ${
+                      isRouteActive(link.route)
+                        ? "text-primary font-medium"
+                        : ""
+                    }`}
                   >
                     {link.name}
                   </li>
