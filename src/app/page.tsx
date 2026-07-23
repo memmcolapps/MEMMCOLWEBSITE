@@ -64,28 +64,28 @@ const factoryImages = [
     src: "/images/factory9.jpeg",
     alt: "Hosted Spectech Synergy Limited",
     description:
-    "Hosted Spectech Synergy Limited in the Software Department for a live demonstration of MEMMCOL's smart metering software solutions, showcasing the digital platforms that power meter management, monitoring, and utility operations.",
+      "Hosted Spectech Synergy Limited in the Software Department for a live demonstration of MEMMCOL's smart metering software solutions, showcasing the digital platforms that power meter management, monitoring, and utility operations.",
   },
 
   {
     src: "/images/factory10.jpeg",
     alt: "Hosted members of the Nigerian Society of Engineers (NSE)",
     description:
-    "Hosted members of the Nigerian Society of Engineers (NSE) for a technical tour and demonstration of MEMMCOL's smart metering technologies, highlighting local manufacturing excellence and engineering innovation.",
+      "Hosted members of the Nigerian Society of Engineers (NSE) for a technical tour and demonstration of MEMMCOL's smart metering technologies, highlighting local manufacturing excellence and engineering innovation.",
   },
 
   {
     src: "/images/factory11.jpeg",
     alt: "Hosted Rear Admiral A.A. Mustapha in the Software Department",
     description:
-    "Hosted Rear Admiral A.A. Mustapha in the Software Department for a live demonstration of MEMMCOL's smart metering software, showcasing advanced monitoring, remote meter management, and digital utility solutions.",
+      "Hosted Rear Admiral A.A. Mustapha in the Software Department for a live demonstration of MEMMCOL's smart metering software, showcasing advanced monitoring, remote meter management, and digital utility solutions.",
   },
 
   {
     src: "/images/factory12.jpeg",
     alt: "A hands-on demonstration of MEMMCOL's hardware innovations",
     description:
-    "A hands-on demonstration of MEMMCOL's hardware innovations, showcasing PCB design, electronic components, and smart meter hardware architecture, with discussions on engineering capabilities and local technology development.",
+      "A hands-on demonstration of MEMMCOL's hardware innovations, showcasing PCB design, electronic components, and smart meter hardware architecture, with discussions on engineering capabilities and local technology development.",
   },
 
   {
@@ -106,14 +106,14 @@ const factoryImages = [
     src: "/images/factory15.jpeg",
     alt: "Major General Shaffaru received a live demonstration of the Central Intelligence Tracker",
     description:
-    "Major General Shaffaru received a live demonstration of the Central Intelligence Tracker, showcasing its real-time monitoring, mapping, and incident management capabilities for enhanced situational awareness and rapid decision-making.",
+      "Major General Shaffaru received a live demonstration of the Central Intelligence Tracker, showcasing its real-time monitoring, mapping, and incident management capabilities for enhanced situational awareness and rapid decision-making.",
   },
 
   {
     src: "/images/factory16.jpeg",
     alt: "Major General Shaffaru visited the Hardware Department",
     description:
-    "Major General Shaffaru visited the Hardware Department, where he was shown MEMMCOL's smart meter hardware components, PCB assemblies, and embedded electronics. The session highlighted the design, functionality, and innovation behind the company's metering hardware solutions.",
+      "Major General Shaffaru visited the Hardware Department, where he was shown MEMMCOL's smart meter hardware components, PCB assemblies, and embedded electronics. The session highlighted the design, functionality, and innovation behind the company's metering hardware solutions.",
   },
 
   // {
@@ -155,9 +155,9 @@ const factoryImages = [
 export default function HomePage() {
   return (
     <main>
-      <div className="relative min-h-screen">
-        <Navbar />
+      <Navbar />
 
+      <div className="relative min-h-screen">
         {/* <div className="relative z-20"> */}
         <section className="px-4 md:px-6">
           <HeroSection />

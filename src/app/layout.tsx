@@ -34,7 +34,7 @@ export default function RootLayout({
       <body className="relative min-h-screen flex flex-col overflow-x-hidden">
         <ConditionalNavbar />
         <Ellipsis />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 pt-24">{children}</main>
           <ConditionalReadySection />
         <Footer />
       </body>

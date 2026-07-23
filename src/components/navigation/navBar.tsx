@@ -106,7 +106,7 @@ const Navbar = ({ light = false }: NavbarProps) => {
   return (
     <nav
       ref={navbarRef}
-      className={`sticky top-0 z-50 px-4 md:px-14 py-8 flex flex-row justify-between items-center relative transition-colors duration-300 ${
+      className={`fixed w-full top-0 z-50 px-4 md:px-14 py-8 flex flex-row justify-between items-center transition-colors duration-300 ${
         scrolled ? "bg-white shadow-sm" : "bg-white md:bg-transparent"
       }`}
     >
