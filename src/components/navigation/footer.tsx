@@ -25,11 +25,12 @@ const footerColumns: FooterColumn[] = [
       { label: "Services", href: "/servicepage", external: true },
       { label: "Utility Software", href: "/software", external: true },
       {
-        label: "Documentation",
+        label: "API Documentation",
         href: "https://meters-api.netlify.app/",
         external: true,
       },
       { label: "Enhancement Panel", href: "/enhancementPanel", external: true },
+      { label: "Electrical Materials", href: "/electric", external: true },
       { label: "About Us", href: "/aboutus", external: true },
     ],
   },

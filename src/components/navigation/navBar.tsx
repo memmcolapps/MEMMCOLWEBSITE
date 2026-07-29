@@ -7,7 +7,7 @@ import Image from "next/image";
 import Button from "../buttons/button";
 
 interface NavbarProps {
-  light?: boolean; 
+  light?: boolean;
 }
 
 const Navbar = ({ light = false }: NavbarProps) => {
@@ -27,8 +27,9 @@ const Navbar = ({ light = false }: NavbarProps) => {
       submenu: [
         { name: "Meters", route: "/products" },
         { name: "Software", route: "/software" },
+        { name: "Electrical Materials", route: "/electric" },
         { name: "Enhancement Panel", route: "/enhancementPanel" },
-      ]
+      ],
     },
     { name: "Services", route: "/servicepage" },
     {
@@ -63,7 +64,7 @@ const Navbar = ({ light = false }: NavbarProps) => {
       setScrolled(window.scrollY > 10);
     };
 
-    handleScroll(); 
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
 
     return () => {
