@@ -33,8 +33,8 @@ const team: TeamMember[] = [
     image: "/images/Person.png",
   },
     {
-    name: "Olugbenga Ayo-Omodara",
-    role: "Chief Commercial Officer, Momas Group",
+    name: "Olajumoke Aladekomo",
+    role: "HR/Admin",
     image: "/images/hr.png",
   },
 ];
