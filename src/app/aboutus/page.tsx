@@ -18,7 +18,7 @@ export default function AboutHero() {
         />
 
         <div className="relative z-10 flex flex-col h-full">
-          <Navbar light />
+          <Navbar />
 
           <div className="flex-1 flex items-center justify-center">
             <h1 className="text-xl md:text-3xl font-semibold text-white text-center">
