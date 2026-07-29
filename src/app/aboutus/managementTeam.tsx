@@ -22,9 +22,6 @@ const team: TeamMember[] = [
     role: "Chief R&D Manager",
     image: "/images/EngMuda.png",
   },
-];
-
-const teams: TeamMember[] = [
   {
     name: "Engr. Paul Akinde",
     role: "Head Of R&D (Hardware)",
@@ -35,7 +32,16 @@ const teams: TeamMember[] = [
     role: "Chief Commercial Officer, Momas Group",
     image: "/images/Person.png",
   },
+    {
+    name: "Olugbenga Ayo-Omodara",
+    role: "Chief Commercial Officer, Momas Group",
+    image: "/images/hr.png",
+  },
 ];
+
+// const teams: TeamMember[] = [
+
+// ];
 
 export default function ManagementTeam() {
   return (
@@ -71,7 +77,7 @@ export default function ManagementTeam() {
         ))}
       </div>
 
-      <div className="flex flex-wrap justify-center gap-4 mt-8">
+      {/* <div className="flex flex-wrap justify-center gap-4 mt-8">
         {teams.map((member, i) => (
           <div
             key={i}
@@ -91,7 +97,7 @@ export default function ManagementTeam() {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </section>
   );
 }
