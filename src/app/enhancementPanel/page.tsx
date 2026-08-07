@@ -1,6 +1,20 @@
 import SectionHeader from "@/components/headers/sectionHeader";
 import SoftwareCard from "../software/softwareCard";
 import Image from "next/image";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Substation Enhancement Panel",
+  description:
+    "MEMMCOL's substation enhancement projects — the game changer enabling 24-hour power supply on existing distribution networks.",
+  path: "/enhancementPanel",
+  keywords: [
+    "substation enhancement panel",
+    "distribution network upgrade",
+    "24 hour power supply Nigeria",
+    "power sector infrastructure",
+  ],
+});
 
 const solutions = [
   {

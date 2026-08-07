@@ -1,5 +1,22 @@
 import SectionHeader from "@/components/headers/sectionHeader";
 import ProductGrid from "./productSection";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Smart Electricity Meters",
+  description:
+    "Single-phase and three-phase smart meters with switchable prepaid/postpaid modes, tamper detection, remote disconnection and real-time consumption monitoring.",
+  path: "/products",
+  keywords: [
+    "prepaid meter",
+    "postpaid meter",
+    "single phase meter",
+    "three phase meter",
+    "smart meter Nigeria",
+    "MOMAS meters",
+    "tamper detection meter",
+  ],
+});
 
 const products = [
   {

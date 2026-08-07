@@ -1,6 +1,20 @@
 import Slideshow from "@/app/(homapage)/factorySection/factory";
 import SoftwareCard from "@/app/software/softwareCard";
 import SectionHeader from "@/components/headers/sectionHeader";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Corporate Social Responsibility",
+  description:
+    "Giving back to the society — MEMMCOL's corporate social responsibility work across Nigeria, from community initiatives to skills development.",
+  path: "/mediapage/csr",
+  keywords: [
+    "MEMMCOL CSR",
+    "corporate social responsibility Nigeria",
+    "community outreach",
+    "giving back to society",
+  ],
+});
 
 const solutions = [
   {

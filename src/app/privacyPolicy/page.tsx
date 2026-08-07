@@ -1,6 +1,14 @@
 import Image from "next/image";
 import Navbar from "@/components/navigation/navBar";
 import BriefList from "./briefList";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Privacy Policy",
+  description:
+    "How MEMMCOL collects, uses, stores and protects your personal information across our website, meters and MomasPay services.",
+  path: "/privacyPolicy",
+});
 
 const PRIVACY_POLICY = [
   {

@@ -1,6 +1,14 @@
 import Image from "next/image";
 import Navbar from "@/components/navigation/navBar";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Terms of Use",
+  description:
+    "The terms governing your use of the MEMMCOL website, products and digital services, including acceptable use, intellectual property and account obligations.",
+  path: "/termsOfUse",
+});
 
 type Subsection = {
   heading?: string;

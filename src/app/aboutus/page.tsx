@@ -4,6 +4,20 @@ import SectionHeader from "@/components/headers/sectionHeader";
 import WhoAreWe from "./whoAreWe";
 import OurJourney from "./ourJourney";
 import ManagementTeam from "./managementTeam";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "About Us",
+  description:
+    "Founded in 1995, MOMAS grew into MEMMCOL — Nigeria's leading electricity meter manufacturer. Our journey, our management team and the engineering behind it.",
+  path: "/aboutus",
+  keywords: [
+    "about MEMMCOL",
+    "MOMAS Electricity Meters Manufacturing Company",
+    "Nigerian meter manufacturer",
+    "MEMMCOL management team",
+  ],
+});
 
 export default function AboutHero() {
   return (

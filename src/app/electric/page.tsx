@@ -1,5 +1,21 @@
 import SectionHeader from "@/components/headers/sectionHeader";
 import ProductGrid from "../products/productSection";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Electrical Materials",
+  description:
+    "Circuit breakers, fuse breakers, meter boxes and spiral flexible trucking pipes from MEMMCOL — reliable components for safe installations and power distribution.",
+  path: "/electric",
+  keywords: [
+    "electrical materials Nigeria",
+    "circuit breaker",
+    "fuse breaker",
+    "meter box",
+    "spiral flexible trucking pipes",
+    "electrical components",
+  ],
+});
 
 const products = [
   {

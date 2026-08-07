@@ -1,6 +1,21 @@
 import SectionHeader from "@/components/headers/sectionHeader";
 import ServicesSection from "../(homapage)/serviceSection/serviceSection";
 import Image from "next/image";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Our Services",
+  description:
+    "Meter manufacturing and repair, installation, 24/7 customer service and consultancy from MEMMCOL — Nigeria's local smart metering partner.",
+  path: "/servicepage",
+  keywords: [
+    "meter manufacturing Nigeria",
+    "meter repair services",
+    "metering consultancy",
+    "meter installation",
+    "MEMMCOL services",
+  ],
+});
 
 export default function ServicePage() {
   return (

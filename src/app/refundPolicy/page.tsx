@@ -1,6 +1,14 @@
 import Image from "next/image";
 import Navbar from "@/components/navigation/navBar";
 import BriefList from "../privacyPolicy/briefList";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Refund Policy",
+  description:
+    "MEMMCOL's refund policy — eligibility, timelines and how to request a refund on meters, accessories and MomasPay transactions.",
+  path: "/refundPolicy",
+});
 
 const PRIVACY_POLICY = [
   {

@@ -1,6 +1,14 @@
 import Image from "next/image";
 import Navbar from "@/components/navigation/navBar";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Limitation of Liability",
+  description:
+    "The scope and limits of MEMMCOL's liability in connection with our products, website and services.",
+  path: "/limitation-of-liability",
+});
 
 type Subsection = {
   heading?: string;
