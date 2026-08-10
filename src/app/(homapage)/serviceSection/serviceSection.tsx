@@ -11,7 +11,7 @@ const services = [
     icon: "Wrench",
     title: "Meter Installation",
     description:
-      "MEMMCOL goes beyond meter manufacturing, with experts skilled in detecting, troubleshooting, and resolving both hardware and software issues.",
+      "Through Momas Systems, MEMMCOL is the first wholly indigenous company to deploy, install, and manage prepaid metering solutions for Nigeria’s Power Holding Company.",
   },
   {
     icon: "Zap",
@@ -23,7 +23,7 @@ const services = [
     icon: "Headphones",
     title: "24/7 Customer Service",
     description:
-      "The MEMMCOL Customer Care Centre (CCC) offers a dedicated single point of contact, providing prompt assistance and building strong, lasting relationships with customers.",
+      "The MEMMCOL Customer Care Centre offers a dedicated single point of contact, providing prompt assistance and building strong, lasting relationships with customers.",
   },
   {
     icon: "Briefcase",
@@ -48,7 +48,8 @@ export default function ServicesSection() {
             Our <span className="text-green-600">Services</span>
           </h2>
           <p className="text-gray-500 text-sm md:text-base">
-            We make energy access simple, smart, and reliable for homes and businesses.
+            We make energy access simple, smart, and reliable for homes and
+            businesses.
           </p>
         </div>
 
