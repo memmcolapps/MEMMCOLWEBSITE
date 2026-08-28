@@ -13,6 +13,7 @@ const images = [
   "/images/6.png",
   "/images/7.png",
   "/images/8.png",
+  "/images/9.png",
 ];
 
 export default function ImageMarquee() {
