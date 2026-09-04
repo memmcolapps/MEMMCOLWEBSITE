@@ -142,6 +142,7 @@ export default function ContactUs() {
           <div className="grid w-full gap-3">
             <Label className="text-gray-700" htmlFor="phone">
               Phone Number
+              <span className="text-red-600">*</span>
             </Label>
             <Input
               id="phone"
