@@ -26,7 +26,7 @@ const footerColumns: FooterColumn[] = [
       { label: "Utility Software", href: "/software", external: true },
       {
         label: "API Documentation",
-        href: "https://meters-api.netlify.app/",
+        href: "https://meters-api.memmserve.com/",
         external: true,
       },
       { label: "Enhancement Panel", href: "/enhancementPanel", external: true },
