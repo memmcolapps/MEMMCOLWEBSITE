@@ -7,7 +7,7 @@ import { getStoreLink } from "../../../utils/getStoreLink";
 
 const solutions = [
   {
-    src: "https://meters-api.netlify.app/",
+    src: "https://meters-api.memmserve.com/",
     title: "Memmcol API",
     image: "/images/momas-api.png",
     imageAlt: "Gridflex dashboard on desktop",
