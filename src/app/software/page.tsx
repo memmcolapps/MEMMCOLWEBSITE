@@ -50,7 +50,7 @@ const solutions = [
   },
   {
     title: "Momaspay",
-    image: "/images/mompay.png",
+    image: "/images/plus.png",
     playStoreUrl:
       "https://play.google.com/store/apps/details?id=com.memmcol.momaspay&hl=en",
     appStoreUrl: "https://apps.apple.com/us/app/momaspay-plus/id6743942353",
