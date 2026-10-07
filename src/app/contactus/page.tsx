@@ -12,15 +12,32 @@ export default function ContactUs() {
   const [organizationName, setOrganizationName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNo, setPhoneNo] = useState("");
+  const [enquiryType, setEnquiryType] = useState("");
   const [message, setMessage] = useState("");
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
 
+  const ACCESS_KEYS: Record<string, string | undefined> = {
+    // olugbengaayoomodara@gmail.com || info@memmcol.com
+    meterpurchase: process.env.NEXT_PUBLIC_WEB3FORMS_METER_PURCHASE_KEY,
+
+    // Current default email route
+    apiservices: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+    software: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+
+    // momashelpdesk@gmail.com
+    metertechnical: process.env.NEXT_PUBLIC_WEB3FORMS_HELPDESK_KEY,
+    momasenquires: process.env.NEXT_PUBLIC_WEB3FORMS_HELPDESK_KEY,
+    estaterelated: process.env.NEXT_PUBLIC_WEB3FORMS_HELPDESK_KEY,
+    generalfeedback: process.env.NEXT_PUBLIC_WEB3FORMS_HELPDESK_KEY,
+    others: process.env.NEXT_PUBLIC_WEB3FORMS_HELPDESK_KEY,
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!organizationName || !email || !message) {
+    if (!organizationName || !email || !enquiryType || !message) {
       setStatusMessage({
         type: "error",
         text: "Please fill in all required fields.",
@@ -28,8 +45,22 @@ export default function ContactUs() {
       return;
     }
 
+    const selectedAccessKey = ACCESS_KEYS[enquiryType];
+
+    if (!selectedAccessKey) {
+      setStatusMessage({
+        type: "error",
+        text: "Configuration error: Missing access key for the selected enquiry type.",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     setStatusMessage({ type: "", text: "" });
+
+    const selectedEnquiryLabel =
+      ENQUIRY_TYPES.find((item) => item.value === enquiryType)?.label ||
+      enquiryType;
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -39,12 +70,13 @@ export default function ContactUs() {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+          access_key: selectedAccessKey,
           name: organizationName,
           email: email,
           phone: phoneNo,
+          enquiry_type: selectedEnquiryLabel,
           message: message,
-          subject: `New Contact Form Submission from ${organizationName}`,
+          subject: `New Contact Form Submission (${selectedEnquiryLabel}) from ${organizationName}`,
         }),
       });
 
@@ -58,6 +90,7 @@ export default function ContactUs() {
         setOrganizationName("");
         setEmail("");
         setPhoneNo("");
+        setEnquiryType("");
         setMessage("");
       } else {
         setStatusMessage({
@@ -65,7 +98,7 @@ export default function ContactUs() {
           text: result.message || "Something went wrong. Please try again.",
         });
       }
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       setStatusMessage({
         type: "error",
@@ -75,6 +108,17 @@ export default function ContactUs() {
       setIsSubmitting(false);
     }
   };
+
+  const ENQUIRY_TYPES = [
+    { value: "meterpurchase", label: "Meter Purchase Enquiries" },
+    { value: "metertechnical", label: "Meter Technical Enquiries" },
+    { value: "momasenquires", label: "MomasPay Enquiries" },
+    { value: "estaterelated", label: "Estate Related Enquiries" },
+    { value: "apiservices", label: "API Services Enquiries" },
+    { value: "software", label: "Software Enquiries" },
+    { value: "generalfeedback", label: "General Feedback" },
+    { value: "others", label: "Others" },
+  ];
 
   return (
     <div className="bg-white">
@@ -151,6 +195,54 @@ export default function ContactUs() {
               className="h-12"
               onChange={(e) => setPhoneNo(e.target.value)}
             />
+          </div>
+
+          <div className="grid w-full gap-3">
+            <Label className="text-gray-700" htmlFor="enquiry_type">
+              Enquiry Type
+              <span className="text-red-600">*</span>
+            </Label>
+            <div className="relative">
+              <select
+                id="enquiry_type"
+                className={`w-full h-12 px-3 border rounded-md appearance-none bg-white focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${
+                  enquiryType ? "text-gray-900" : "text-gray-400"
+                }`}
+                value={enquiryType}
+                onChange={(e) => setEnquiryType(e.target.value)}
+                required
+              >
+                <option value="" disabled hidden>
+                  Select Enquiry type
+                </option>
+
+                {ENQUIRY_TYPES.map((option) => (
+                  <option
+                    key={option.value}
+                    value={option.value}
+                    className="text-gray-900"
+                  >
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </div>
+            </div>
           </div>
 
           <div className="grid w-full gap-3">
