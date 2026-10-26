@@ -5,7 +5,6 @@ import { X } from "lucide-react";
 
 // Midnight 1 Dec 2026 in Lagos (WAT, UTC+1). After this the celebration disappears on its own.
 const CELEBRATION_ENDS = new Date("2026-12-01T00:00:00+01:00");
-const FLOWN_KEY = "memmcol-31-flyover-flown";
 const DISMISSED_KEY = "memmcol-31-ribbon-dismissed";
 
 const CONFETTI_COLORS = ["#37925E", "#213328", "#F5B82E", "#8FD3A8", "#E4572E"];
@@ -22,7 +21,7 @@ function writeSession(key: string) {
   try {
     sessionStorage.setItem(key, "1");
   } catch {
-    // Storage blocked (private mode etc.) — the flyover will simply replay.
+    // Storage blocked (private mode etc.) — the ribbon will simply reappear.
   }
 }
 
@@ -30,7 +29,7 @@ function Plane() {
   return (
     <svg
       viewBox="0 0 120 60"
-      className="h-12 w-24 md:h-16 md:w-32 shrink-0"
+      className="h-20 w-40 md:h-28 md:w-56 shrink-0"
       aria-hidden="true"
     >
       {/* tail */}
@@ -86,7 +85,7 @@ export default function AnniversaryFlyover() {
     setShowRibbon(!readSession(DISMISSED_KEY));
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion || readSession(FLOWN_KEY)) {
+    if (reduceMotion) {
       setPhase("done");
       return;
     }
@@ -95,10 +94,7 @@ export default function AnniversaryFlyover() {
     return () => clearTimeout(timer);
   }, []);
 
-  const finishFlight = () => {
-    writeSession(FLOWN_KEY);
-    setPhase("done");
-  };
+  const finishFlight = () => setPhase("done");
 
   const dismissRibbon = () => {
     writeSession(DISMISSED_KEY);
@@ -110,7 +106,7 @@ export default function AnniversaryFlyover() {
       {phase === "flying" && (
         <>
           <div
-            className="pointer-events-none fixed inset-x-0 top-28 md:top-32 z-40 overflow-hidden h-24"
+            className="pointer-events-none fixed inset-x-0 top-28 md:top-32 z-40 overflow-hidden h-28 md:h-36"
             aria-hidden="true"
           >
             <div
