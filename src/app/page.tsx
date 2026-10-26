@@ -7,6 +7,7 @@ import GameSection from "./(homapage)/gameChanger/gameSection";
 import Testimonials from "./(homapage)/testimonials/testimonialSection";
 import Slideshow from "./(homapage)/factorySection/factory";
 import Navbar from "@/components/navigation/navBar";
+import AnniversaryFlyover from "@/components/ui/anniversaryFlyover";
 
 const factoryImages = [
   {
@@ -156,6 +157,7 @@ export default function HomePage() {
   return (
     <main>
       <Navbar />
+      <AnniversaryFlyover />
 
       <div className="relative min-h-screen">
         {/* <div className="relative z-20"> */}
