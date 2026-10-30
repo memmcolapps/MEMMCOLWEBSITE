@@ -87,7 +87,7 @@ export default async function ProductPage({ params }: PageProps) {
       <section className="grid items-center gap-7 rounded-xl border border-gray-200 p-5 max-sm:border-0 max-sm:px-0 max-sm:py-0 sm:p-7 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12">
         <ProductGallery key={product.slug} images={product.heroImages ?? product.images} />
         <div className="py-2 max-sm:text-center">
-          <h1 className="max-w-xl text-2xl font-bold leading-tight text-primary sm:text-3xl lg:text-4xl">{product.fullName}</h1>
+          <h1 className="max-w-xl text-2xl font-bold leading-tight text-primary sm:text-2xl lg:text-3xl">{product.fullName}</h1>
           <p className="mt-5 max-w-prose text-sm leading-7 text-gray-600 sm:text-base">{product.description}</p>
           {!!product.tags?.length && (
             <ul className="mt-5 flex flex-wrap gap-2 max-sm:justify-center" aria-label="Product attributes">
