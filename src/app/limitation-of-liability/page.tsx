@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Navbar from "@/components/navigation/navBar";
-import Link from "next/link";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({

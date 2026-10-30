@@ -1,17 +1,20 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { ChevronDown, ChevronRight, ChevronUp, Menu, X } from "lucide-react";
 import Image from "next/image";
-import Button from "../buttons/button";
+import Link from "next/link";
 
 interface NavbarProps {
   light?: boolean;
 }
 
+type NavItem =
+  | { kind: "link"; name: string; route: string }
+  | { kind: "menu"; name: string; submenu: { name: string; route: string }[] };
+
 const Navbar = ({ light = false }: NavbarProps) => {
-  const router = useRouter();
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -20,9 +23,10 @@ const Navbar = ({ light = false }: NavbarProps) => {
   const navbarRef = useRef<HTMLElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
-  const navLinks = [
-    { name: "Home", route: "/" },
+  const navLinks: NavItem[] = [
+    { kind: "link", name: "Home", route: "/" },
     {
+      kind: "menu",
       name: "Products",
       submenu: [
         { name: "Meters", route: "/products" },
@@ -31,16 +35,17 @@ const Navbar = ({ light = false }: NavbarProps) => {
         { name: "Enhancement Panel", route: "/enhancementPanel" },
       ],
     },
-    { name: "Services", route: "/servicepage" },
+    { kind: "link", name: "Services", route: "/servicepage" },
     {
+      kind: "menu",
       name: "Media",
       submenu: [
         { name: "News", route: "/mediapage/mediasection" },
         { name: "CSR", route: "/mediapage/csr" },
       ],
     },
-    { name: "Contact us", route: "/contactus" },
-    { name: "About us", route: "/aboutus" },
+    { kind: "link", name: "Contact us", route: "/contactus" },
+    { kind: "link", name: "About us", route: "/aboutus" },
   ];
 
   const isRouteActive = (route: string) => {
@@ -95,7 +100,7 @@ const Navbar = ({ light = false }: NavbarProps) => {
       }
     };
 
-    if (mobileMenuOpen || openDropdown) {
+    if (mobileMenuOpen || openDropdown !== null) {
       document.addEventListener("mousedown", handleClickOutside);
     }
 
@@ -111,26 +116,29 @@ const Navbar = ({ light = false }: NavbarProps) => {
         scrolled ? "bg-white shadow-sm" : "bg-white md:bg-transparent"
       }`}
     >
-      <div
-        className="font-bold text-lg cursor-pointer w-30 sm:w-20 md:w-36"
-        onClick={() => router.push("/")}
+      <Link
+        href="/"
+        aria-label="MEMMCOL home"
+        className="font-bold text-lg w-30 sm:w-20 md:w-36"
       >
         <Image
           src="/icons/nav.svg"
-          alt="Logo"
+          alt="MEMMCOL logo"
           width={40}
           height={40}
           priority
           className="w-full h-auto"
         />
-      </div>
+      </Link>
 
       {/* Web Navbar */}
       <ul className="hidden sm:flex gap-6 items-center">
         {navLinks.map((link, idx) =>
-          link.submenu ? (
+          link.kind === "menu" ? (
             <li key={idx} className="relative p-2 cursor-pointer">
-              <div
+              <button
+                type="button"
+                aria-expanded={openDropdown === idx}
                 onClick={() =>
                   setOpenDropdown((prev) => (prev === idx ? null : idx))
                 }
@@ -148,58 +156,56 @@ const Navbar = ({ light = false }: NavbarProps) => {
                 ) : (
                   <ChevronDown size={16} />
                 )}
-              </div>
+              </button>
 
-              {openDropdown === idx && (
-                <ul className="absolute left-0 w-[200px] bg-white shadow-lg rounded-lg py-2 z-20">
+              <ul className={`absolute left-0 w-[200px] bg-white shadow-lg rounded-lg py-2 z-20 ${openDropdown === idx ? "" : "hidden"}`}>
                   {link.submenu.map((sub, i) => (
-                    <li
-                      key={i}
-                      onClick={() => router.push(sub.route)}
-                      className={`px-4 py-2 hover:text-gray-500 cursor-pointer text-sm block w-full ${
+                    <li key={i}>
+                      <Link
+                      href={sub.route}
+                      className={`px-4 py-2 hover:text-gray-500 text-sm block w-full ${
                         isRouteActive(sub.route)
                           ? "text-primary font-medium"
                           : "text-gray-900"
                       }`}
-                    >
+                      >
                       {sub.name}
+                      </Link>
                       {i !== link.submenu.length - 1 && (
                         <hr className="w-full mt-2 border-gray-100" />
                       )}
                     </li>
                   ))}
-                </ul>
-              )}
+              </ul>
             </li>
           ) : (
-            <li
-              key={idx}
-              onClick={() => router.push(link.route)}
-              className={`cursor-pointer text-sm p-2 hover:text-primary ${
+            <li key={idx}>
+              <Link
+              href={link.route}
+              className={`block text-sm p-2 hover:text-primary ${
                 isRouteActive(link.route)
                   ? "text-primary font-medium"
                   : useLight
                     ? "text-white"
                     : "text-black"
               }`}
-            >
+              >
               {link.name}
+              </Link>
             </li>
           ),
         )}
       </ul>
 
       <div className="hidden sm:block">
-        <Button
-          onClick={() => router.push("/contactus")}
-          text={"Connect with us"}
-          className="w-full text-sm h-10"
-        />
+        <Link href="/contactus" className="flex h-10 items-center justify-center rounded-lg bg-[var(--primary)] px-6 text-sm text-white transition hover:opacity-90">
+          Connect with us
+        </Link>
       </div>
 
       {/* Hamburger */}
       <div className="sm:hidden flex items-center ">
-        <button onClick={() => setMobileMenuOpen((prev) => !prev)}>
+        <button type="button" aria-label={mobileMenuOpen ? "Close menu" : "Open menu"} aria-expanded={mobileMenuOpen} onClick={() => setMobileMenuOpen((prev) => !prev)}>
           {mobileMenuOpen ? (
             <X color={useLight ? "white" : "black"} size={16} />
           ) : (
@@ -216,9 +222,11 @@ const Navbar = ({ light = false }: NavbarProps) => {
         >
           <ul className="flex flex-col gap-2 p-4">
             {navLinks.map((link, idx) =>
-              link.submenu ? (
+              link.kind === "menu" ? (
                 <li key={idx} className="flex flex-col">
-                  <div
+                  <button
+                    type="button"
+                    aria-expanded={openDropdown === idx}
                     onClick={() =>
                       setOpenDropdown((prev) => (prev === idx ? null : idx))
                     }
@@ -234,37 +242,38 @@ const Navbar = ({ light = false }: NavbarProps) => {
                     ) : (
                       <ChevronRight size={16} />
                     )}
-                  </div>
+                  </button>
                   <hr className="w-full mt-2 border-gray-100" />
-                  {openDropdown === idx && (
-                    <ul className="flex flex-col rounded-md mt-1">
+                  <ul className={`flex flex-col rounded-md mt-1 ${openDropdown === idx ? "" : "hidden"}`}>
                       {link.submenu.map((sub, i) => (
-                        <li
-                          key={i}
-                          onClick={() => router.push(sub.route)}
-                          className={`px-4 py-2 hover:bg-gray-100 cursor-pointer ${
+                        <li key={i}>
+                          <Link
+                          href={sub.route}
+                          className={`block px-4 py-2 hover:bg-gray-100 ${
                             isRouteActive(sub.route)
                               ? "text-primary font-medium"
                               : ""
                           }`}
-                        >
+                          >
                           {sub.name}
+                          </Link>
                         </li>
                       ))}
-                    </ul>
-                  )}
+                  </ul>
                 </li>
               ) : (
                 <div key={idx}>
-                  <li
-                    onClick={() => router.push(link.route)}
-                    className={`px-2 py-2 cursor-pointer hover:bg-gray-100 rounded-md ${
+                  <li>
+                    <Link
+                    href={link.route}
+                    className={`block px-2 py-2 hover:bg-gray-100 rounded-md ${
                       isRouteActive(link.route)
                         ? "text-primary font-medium"
                         : ""
                     }`}
-                  >
+                    >
                     {link.name}
+                    </Link>
                   </li>
                   <hr className="w-full mt-2 border-gray-100" />
                 </div>

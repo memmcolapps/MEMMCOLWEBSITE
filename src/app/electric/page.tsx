@@ -137,6 +137,7 @@ export default function MeteringSolutionSection() {
   return (
     <section className="py-16">
       <SectionHeader
+        as="h1"
         titleStart="Electrical "
         titleHighlight="Materials"
         description="Momas Electrical Materials deliver reliable, high-quality electrical components for safe installations, efficient power distribution, and long-lasting performance."

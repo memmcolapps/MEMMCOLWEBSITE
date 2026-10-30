@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Smart Electricity Meters",
   description:
-    "Single-phase and three-phase smart meters with switchable prepaid/postpaid modes, tamper detection, remote disconnection and real-time consumption monitoring.",
+    "Explore MEMMCOL single-phase and three-phase electricity meters, including prepaid, postpaid and smart metering solutions for homes, businesses and utilities.",
   path: "/products",
   keywords: [
     "prepaid meter",
@@ -263,6 +263,7 @@ export default function MeteringSolutionSection() {
   return (
     <section className="py-16">
       <SectionHeader
+        as="h1"
         titleStart="Metering"
         titleHighlight="Solution"
         description="Momas metering solutions enable utility companies to deploy smart electricity meters to customers, manage billing and usage, generate secure electricity tokens, and monitor real-time consumption across their network."

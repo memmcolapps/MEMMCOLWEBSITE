@@ -9,6 +9,7 @@ interface Feature {
 
 interface Product {
   productName: string;
+  slug?: string;
   productAddInfo?: string;
   productImage: string;
   description: string;

@@ -79,7 +79,7 @@ export default async function ProductPage({ params }: PageProps) {
   };
 
   return (
-    <article className="relative z-10 mx-auto max-w-6xl space-y-8 bg-transparent px-4 pb-8 text-gray-900  sm:px-6 lg:px-8">
+    <article className="relative z-10 mx-auto max-w-6xl space-y-8 bg-transparent px-4 pb-8 text-gray-900  sm:px-6 lg:px-8 mt-10">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema).replace(/</g, "\\u003c") }}

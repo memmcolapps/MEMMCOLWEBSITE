@@ -1,16 +1,24 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import type { ReactNode } from "react";
 import SectionHeader from "@/components/headers/sectionHeader";
-import SoftwareCard from "./softwareCard";
+import SoftwareCard, { type SoftwareCardProps } from "./softwareCard";
 import { getStoreLink } from "../../../utils/getStoreLink";
 
-const solutions = [
+type SoftwareSolution = SoftwareCardProps & {
+  src?: string;
+  linkTo?: boolean;
+  playStoreUrl?: string;
+  appStoreUrl?: string;
+  description: ReactNode;
+};
+
+const solutions: SoftwareSolution[] = [
   {
     src: "https://meters-api.memmserve.com/",
     title: "Memmcol API",
     image: "/images/momas-api.png",
-    imageAlt: "Gridflex dashboard on desktop",
+    imageAlt: "MEMMCOL API interface",
     subtitle: "Connect. Integrate. Scale.",
     description:
       "Empower your applications with secure, well-documented APIs designed for seamless integrations, real-time monitoring, and enterprise-grade reliability.",
@@ -130,28 +138,10 @@ const solutions = [
 ];
 
 export default function SoftwareSolutionsSection() {
-  const router = useRouter();
-
-  const handleClick = (item: (typeof solutions)[number]) => {
-    if ("playStoreUrl" in item) {
-      const url = getStoreLink(item.playStoreUrl!, item.appStoreUrl!);
-      window.open(url, "_blank", "noopener,noreferrer");
-      return;
-    }
-
-    const src = (item as { src?: string }).src;
-    if (!src) return;
-
-    if (src.startsWith("http")) {
-      window.open(src, "_blank", "noopener,noreferrer");
-    } else {
-      router.push(`/${src}`);
-    }
-  };
-
   return (
     <section className="py-16">
       <SectionHeader
+        as="h1"
         titleStart="Software"
         titleHighlight="Solutions"
         description="Momas software solutions enable utility companies to Manage meters and customers, manage billing and usage, generate secure electricity tokens, and monitor real-time consumption remotely across their network."
@@ -159,14 +149,21 @@ export default function SoftwareSolutionsSection() {
       />
 
       <div className="flex flex-col gap-8 max-w-5xl mx-auto px-4">
-        {solutions.map((solution, i) => {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const { src, playStoreUrl, appStoreUrl, ...rest } = solution as any;
+        {solutions.map((solution) => {
+          const { src, linkTo, playStoreUrl, appStoreUrl, ...rest } = solution;
+          const href = linkTo === false
+            ? undefined
+            : playStoreUrl ?? (src ? (src.startsWith("http") ? src : `/${src}`) : undefined);
           return (
             <SoftwareCard
-              key={i}
+              key={solution.title}
               {...rest}
-              onClick={() => handleClick(solution)}
+              href={href}
+              onLinkClick={playStoreUrl && appStoreUrl
+                ? (event) => {
+                    event.currentTarget.href = getStoreLink(playStoreUrl, appStoreUrl);
+                  }
+                : undefined}
             />
           );
         })}

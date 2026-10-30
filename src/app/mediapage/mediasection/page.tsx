@@ -111,6 +111,7 @@ export default function MediaSection() {
   return (
     <section className="pt-16">
       <SectionHeader
+        as="h1"
         titleStart="Momas Celebrates 30 Years Of"
         titleHighlight=" Engineering Excellence"
         className="mb-12 text-center"

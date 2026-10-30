@@ -19,7 +19,7 @@ export const metadata = pageMetadata({
 const solutions = [
   {
     title: "The Game Changer",
-    imageAlt: "Game Changer",
+    imageAlt: "MEMMCOL substation power enhancement panel",
     image: "/images/transformer.png",
     description:
       "This concept was born out of the state of dilapidation of the existing fuse-driven substations across the country.Momas Substation Power Enhancement Panel is designed to meet the standardization, miniaturization and outdoor requirements of small-capacity low-voltage distribution equipments. It integrates distribution metering, protection, GPRS remotely and controls switches on/off, capacitor reactive compensation, complete and full functions (short circuit, overload, phase loss, overvoltage, undervoltage, residual current, over-current, neutral line disconnection of power supply, lightning protection) are integrated in SPEP, to provide a real safeguard for electricity use.",
@@ -28,7 +28,7 @@ const solutions = [
   {
     title: "The Value Of The Enhancement To The Community Versus Consumer",
     image: "/images/after.png",
-    imageAlt: "Enhancement",
+    imageAlt: "Enhanced electricity substation installation",
     infoOnly: true,
     reverse: true,
     description: (
@@ -83,6 +83,7 @@ export default function EnhancementSection() {
   return (
     <section className="py-16">
       <SectionHeader
+        as="h1"
         titleStart="Substation Enhancement Projects"
         titleHighlight=" Across the nation"
         description="The Game changer for the power sector to have 24hours of power supply on the existing distribution network!"

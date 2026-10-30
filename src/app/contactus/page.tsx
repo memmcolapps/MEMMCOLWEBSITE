@@ -136,9 +136,9 @@ export default function ContactUs() {
           Contact Us
         </div>
         <div className="text-center">
-          <span className="text-3xl text-gray-900 md:text-5xl font-light">
+          <h1 className="text-3xl text-gray-900 md:text-5xl font-light">
             Get in <span className="text-primary">touch with</span> us today
-          </span>
+          </h1>
         </div>
         <div className="flex text-sm md:text-normal flex-col md:w-2/3 font-extralight text-gray-700 text-center">
           Have questions, feedback, or need assistance? Our team is here to help
