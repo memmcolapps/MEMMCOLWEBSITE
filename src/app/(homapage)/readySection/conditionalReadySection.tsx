@@ -8,7 +8,7 @@ const HIDE_READY_SECTION_ON = ["/contactus", "/refundPolicy", "/privacyPolicy", 
 export default function ConditionalReadySection() {
   const pathname = usePathname();
 
-  if (HIDE_READY_SECTION_ON.includes(pathname)) {
+  if (HIDE_READY_SECTION_ON.includes(pathname) || pathname.startsWith("/products/")) {
     return null;
   }
 

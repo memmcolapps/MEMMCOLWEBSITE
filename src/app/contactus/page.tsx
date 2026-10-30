@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -17,6 +17,15 @@ export default function ContactUs() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
+
+  useEffect(() => {
+    const product = new URLSearchParams(window.location.search).get("product");
+    if (product) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setEnquiryType("meterpurchase");
+      setMessage(`I would like to enquire about ${product}.`);
+    }
+  }, []);
 
   const ACCESS_KEYS: Record<string, string | undefined> = {
     // olugbengaayoomodara@gmail.com || info@memmcol.com
@@ -127,9 +136,9 @@ export default function ContactUs() {
           Contact Us
         </div>
         <div className="text-center">
-          <span className="text-3xl text-gray-900 md:text-5xl font-light">
+          <h1 className="text-3xl text-gray-900 md:text-5xl font-light">
             Get in <span className="text-primary">touch with</span> us today
-          </span>
+          </h1>
         </div>
         <div className="flex text-sm md:text-normal flex-col md:w-2/3 font-extralight text-gray-700 text-center">
           Have questions, feedback, or need assistance? Our team is here to help

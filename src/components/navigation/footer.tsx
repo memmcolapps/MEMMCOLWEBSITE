@@ -85,7 +85,7 @@ const Footer = () => {
             <div>
               <Image
                 src="/icons/footerlogo.svg"
-                alt="Logo"
+                alt="MEMMCOL logo"
                 width={200}
                 height={200}
                 priority

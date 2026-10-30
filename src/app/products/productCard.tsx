@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
+import Link from "next/link";
+import { getPageContentBySlug } from "./productsData";
 
 interface Feature {
   title: string;
@@ -16,6 +18,7 @@ interface ProductFeatureCardProps {
   features: Feature[];
   className?: string;
   redLine?: boolean;
+  slug?: string;
 }
 
 export default function ProductFeatureCard({
@@ -26,7 +29,10 @@ export default function ProductFeatureCard({
   redLine = false,
   features,
   className = "",
+  slug,
 }: ProductFeatureCardProps) {
+  const href = slug && getPageContentBySlug(slug) ? `/products/${slug}` : null;
+
   return (
     <div
       className={`relative rounded-2xl border border-gray-200 bg-transparent p-8 overflow-hidden ${className}`}
@@ -45,7 +51,13 @@ export default function ProductFeatureCard({
         {/* Text content */}
         <div className="flex-1">
           <h3 className="text-xl font-semibold text-gray-900 mb-3">
-            {productName}
+            {href ? (
+              <Link href={href} className="hover:text-green-700">
+                {productName}
+              </Link>
+            ) : (
+              productName
+            )}
             {redLine && <span>–</span>}
             <span className="text-red-300 text-sm font-normal">
               {productAddInfo}
@@ -67,7 +79,7 @@ export default function ProductFeatureCard({
                   <span className="font-semibold text-gray-900">
                     {feature.title}
                   </span>{" "}
-                  –{feature.description}
+                  – {feature.description}
                 </p>
               </li>
             ))}
