@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -17,6 +17,15 @@ export default function ContactUs() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
+
+  useEffect(() => {
+    const product = new URLSearchParams(window.location.search).get("product");
+    if (product) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setEnquiryType("meterpurchase");
+      setMessage(`I would like to enquire about ${product}.`);
+    }
+  }, []);
 
   const ACCESS_KEYS: Record<string, string | undefined> = {
     // olugbengaayoomodara@gmail.com || info@memmcol.com

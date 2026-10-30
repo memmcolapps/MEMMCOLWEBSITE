@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { siteUrl } from "@/lib/seo";
+import { products } from "./products/productsData";
 
 type Entry = {
   path: string;
@@ -31,11 +32,19 @@ const routes: Entry[] = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  return routes.map(({ path, priority, changeFrequency }) => ({
+  const staticRoutes = routes.map(({ path, priority, changeFrequency }) => ({
     // "/" resolves to the bare origin so it matches the canonical Next emits
     url: path === "/" ? siteUrl : `${siteUrl}${path}`,
     lastModified,
     changeFrequency,
     priority,
   }));
+  const productRoutes = products.map((product) => ({
+    url: `${siteUrl}/products/${product.slug}`,
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...productRoutes];
 }

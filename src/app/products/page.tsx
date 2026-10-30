@@ -20,7 +20,68 @@ export const metadata = pageMetadata({
 
 const products = [
   {
+    productName: "MMX 313 CT",
+    slug: "mmx-313-ct",
+    productImage: "/images/mmx313ct.png",
+    description:
+      "A complete metering solution that combines a reliable MD meter with a durable fiber-based meter box. Designed for safety, durability and efficient operation in both indoor and outdoor environments.",
+    features: [
+      {
+        title: "MD (Maximum Demand) metering",
+        description: "Measures and records maximum demand for accurate billing and load management."
+      },
+      {
+        title: "Postpaid operation",
+        description: "Supports postpaid billing mode with reliable metering and data storage."
+      },
+      {
+        title: "Fiber-based meter box",
+        description: "Strong, weather-resistant and designed for long-term outdoor use."
+      },
+      {
+        title: "Tamper protection",
+        description: "Detects tampering attempts and ensures system integrity."
+      },
+      {
+        title: "CT rated",
+        description: "Compatible with current transformers for high current applications."
+      }
+
+    ]
+  },
+  {
+    productName: "MMX 313 PPM",
+    slug: "mmx-313-ppm",
+    productImage: "/images/mmx313ct.png",
+    description:
+      "A complete metering solution that combines a reliable MD meter with a durable fiber-based meter box. Designed for safety, durability and efficient operation in both indoor and outdoor environments.",
+    features: [
+      {
+        title: "MD (Maximum Demand) metering",
+        description: "Measures and records maximum demand for accurate billing and load management."
+      },
+      {
+        title: "Prepaid operation",
+        description: "Supports prepaid billing mode with reliable metering and data storage."
+      },
+      {
+        title: "Fiber-based meter box",
+        description: "Strong, weather-resistant and designed for long-term outdoor use."
+      },
+      {
+        title: "Tamper protection",
+        description: "Detects tampering attempts and ensures system integrity."
+      },
+      {
+        title: "CT rated",
+        description: "Compatible with current transformers for high current applications."
+      }
+
+    ]
+  },
+  {
     productName: "The MMX310NG",
+    slug: "mmx-310-ng",
     productImage: "/images/310.png",
     description:
       "A new-generation three-phase smart prepaid electricity meter designed for dual tariff applications. It supports energy monitoring from two different sources—grid and off-grid—and is fully compliant with STS standards. Prepayment and metering functions are managed via token codes, which can be entered through a UIU keypad or remotely via communication modules. The meter is equipped with a measuring unit, display, real-time clock, data storage, local and remote communication interfaces, a load control relay, and other essential functionalities.",
@@ -55,6 +116,7 @@ const products = [
 
   {
     productName: "MMX-110-NG < GPRS>",
+    slug: "mmx-110-ng",
     productImage: "/images/112.png",
     description:
       "A new-generation single-phase din-rail smart prepaid electricity meter designed for dual tariff applications. It supports energy monitoring from two different sources—grid and off-grid—and is fully compliant with STS standards. Prepayment and metering functions are managed via token codes, which can be entered through a UIU keypad or remotely via communication modules. The meter is equipped with a measuring unit, display, real-time clock, data storage, local and remote communication interfaces, a load control relay, and other essential functionalities.",
@@ -89,6 +151,7 @@ const products = [
 
   {
     productName: " MMX110NG-G<GPRS>PLC",
+    slug: "mmx-110-ng-g",
     productImage: "/images/110.png",
     description:
       "The MMX110-NG-GPLC is an advanced single-phase smart meter, designed to revolutionize energy  management with STS compliance and DLMS support. Built for seamless communication, it integrates  PLC/RF UIU technology and features a plug-and-play 4G GPRS communication module, ensuring reliable,  real-time data transmission.",
@@ -124,6 +187,7 @@ const products = [
 
   {
     productName: "MMX310-NG-G<GPRS>PLC",
+    slug: "mmx-310-ng-g-plc-1",
     productImage: "/images/310_2.png",
     description:
       "The MMX310-NG-G<GPRS>PLC is an advanced three-phase smart meter, designed to revolutionize energy  management with STS compliance and DLMS support. Built for seamless communication, it integrates  PLC/RF UIU technology and features a plug-and-play 4G GPRS communication module, ensuring reliable,  real-time data transmission.",
@@ -159,6 +223,7 @@ const products = [
 
   {
     productName: "MMX110-NG-G<GPRS>PLC",
+    slug: "mmx-110ng-g-plc-1",
     // productAddInfo: " Out of production",
     productImage: "/images/110_2.png",
     // redLine: true,

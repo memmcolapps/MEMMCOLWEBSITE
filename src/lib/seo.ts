@@ -46,6 +46,7 @@ type PageSeo = {
   keywords?: string[];
   /** Set for pages that should stay out of search results. */
   noIndex?: boolean;
+  image?: { url: string; width?: number; height?: number; alt: string };
 };
 
 /**
@@ -58,6 +59,7 @@ export function pageMetadata({
   path,
   keywords,
   noIndex,
+  image = ogImage,
 }: PageSeo): Metadata {
   const url = `${siteUrl}${path}`;
 
@@ -73,14 +75,14 @@ export function pageMetadata({
       siteName,
       title: `${title} | ${siteName}`,
       description,
-      images: [ogImage],
+      images: [image],
       locale: "en_NG",
     },
     twitter: {
       card: "summary_large_image",
       title: `${title} | ${siteName}`,
       description,
-      images: [ogImage.url],
+      images: [image.url],
     },
   };
 }
