@@ -18,7 +18,7 @@ const solutions: SoftwareSolution[] = [
     src: "https://meters-api.memmserve.com/",
     title: "Memmcol API",
     image: "/images/momas-api.png",
-    imageAlt: "MEMMCOL API interface",
+    imageAlt: "MOMAS API interface",
     subtitle: "Connect. Integrate. Scale.",
     description:
       "Empower your applications with secure, well-documented APIs designed for seamless integrations, real-time monitoring, and enterprise-grade reliability.",

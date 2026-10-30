@@ -3,13 +3,13 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Utility Software",
   description:
-    "Explore MEMMCOL software: the MEMMCOL API, Gridflex, Smart Breaker Controller and MomasPay for metering, network control and electricity payments.",
+    "EMS, EMAC, Gridflex, MomasPay, Smart Breaker Controller and the MOMAS API — manage meters and customers, handle billing, vend secure tokens and monitor consumption remotely.",
   path: "/software",
   keywords: [
     "utility management software",
     "electricity billing software",
     "vending token software",
-    "MEMMCOL API",
+    "MOMAS API",
     "Gridflex",
     "MomasPay",
     "smart breaker controller",
