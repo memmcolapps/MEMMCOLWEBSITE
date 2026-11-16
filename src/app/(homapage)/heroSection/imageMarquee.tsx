@@ -14,6 +14,7 @@ const images = [
   "/images/7.png",
   "/images/8.png",
   "/images/9.png",
+  "/images/cie.png"
 ];
 
 export default function ImageMarquee() {
