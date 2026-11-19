@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { GoogleAnalytics } from '@next/third-parties/google';
 import "./globals.css";
 import Ellipsis from "@/components/ui/ellipses";
 import Footer from "@/components/navigation/footer";
@@ -154,6 +155,7 @@ export default function RootLayout({
         <ConditionalReadySection />
         <Footer />
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
     </html>
   );
 }
